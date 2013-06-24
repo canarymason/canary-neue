@@ -1,0 +1,48 @@
+// Webfonts
+$josefin-slab: 'Josefin Slab';
+$avenir-next: 'AvenirNextLTW02-Regular';
+$avenir-next-rounded: 'AvenirNextRoundedW01-Re';
+
+// Default font stacks
+$font-sans: $avenir-next, sans;
+$font-sans-rounded: $avenir-next-rounded, sans;
+$font-serifs: Georgia, serif;
+$font-slab: $josefin-slab, $font-serifs;
+$font-mono: Consolas, Menlo, "Courier New", monospace, monospace;
+
+// General font variables
+$font-body: $font-sans;
+$font-headline: $font-slab;
+$font-logo: $font-slab;
+
+// Special use font variables
+// ampersands
+$font-amp: $font-slab;
+// caps
+$font-cap: $font-sans;
+
+
+
+
+////////////////////////////
+// SYMBOLSET - STANDARD
+// uncomment to include
+// http://symbolset.com/
+// NOTE: mixin only includes sass/css
+// purchase the font and place in your fonts directory
+////////////////////////////
+@import 'survivalkit/fonts/ss-standard';
+@include ss-standard-font-face;
+@include ss-standard-classes;
+
+////////////////////////////
+// SYMBOLSET - SOCIAL
+// uncomment to include
+// http://symbolset.com/
+// NOTE: mixin only includes sass/css
+// purchase the font and place in your fonts directory
+////////////////////////////
+// @import 'survivalkit/fonts/ss-social';
+// @include ss-social-font-face;
+// @include ss-social-classes;
+

@@ -1,0 +1,199 @@
+// Create the design for your site below
+// If you're using SMACSS, this is where module, state and theme styles go
+// SITE-WIDE DESIGN -------------------------------------------------------------- */
+
+// .page-wrapper {
+//   @include baseline-grid-background();
+//   border-top: 1px solid red;
+// }
+
+// * {
+//   @include filter( grayscale(1) );
+// }
+
+.wrapper {
+  // @include debug-outline;
+  padding: 0.5em;
+}
+
+
+.main-nav {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  @extend %slab-light;
+  @include text-shadow(rgba($black, 0.4) 1px 1px 0);
+  ul {
+    @include inline-list;
+    #jPanelMenu-menu & {
+      display: block;
+      li {
+        display: block;
+      }
+    }
+  }
+}
+
+#jPanelMenu-menu {
+  background-color: $blue;
+  border-right: 1px solid shade($blue, 20%);
+  li {
+    text-align: right;
+  }
+  a {
+    @include link-colors($cool-white, $white, $white, $cool-white, $cool-white);
+    line-height: 44px;
+    border-bottom: 1px solid rgba(shade($blue, 20%), 0.5);
+    padding: 0 0.5em;
+  }
+  .jPanelMenu-panel & {
+    display: none;
+  }
+}
+
+#wall {
+  background-color: rgba($orange,  0.9);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: $zi-wall;
+  @include breakpoint(500px) {
+    background-color: rgba($white,  0.9);
+    border-left: 1em solid rgba($orange,  0.9);
+  }
+}
+
+[data-menu-position="open"] {
+  .jPanelMenu-panel {
+    > a,
+    > header,
+    > .wrapper,
+    > #menu {
+      @include filter( grayscale(1) );
+    }
+  }
+}
+
+.menu-trigger {
+  float: right;
+  min-width: 44px;
+  line-height: 44px;
+  text-align: center;
+  // @include link-colors($gray-med, $gray-light, $gray-light, $gray-med, $gray-med);
+  @include link-colors($orange, $gray-light, $gray-light, $orange, $orange);
+  @include transform3d( rotate(-90deg) );
+  position: relative;
+  &:after {
+    position: absolute;
+    content: $space;
+    width: 75%;
+    height: 0;
+    bottom: 15px;
+    left: 50%;
+    border-bottom: 1px solid $orange;
+    @include transform3d( translateX(-50%) );
+  }
+}
+
+
+.site-header {
+  padding: 0 0.5em;
+  margin-bottom: 2em;
+  background-color: $white;
+  border-bottom: 1px solid rgba($blue, 0.1);
+}
+
+.logo-site-name {}
+
+.logo {
+  // float: left;
+  width: ms(6);
+  width: ms(8);
+  display: block;
+  margin: 0 auto;
+  @include transform3d( translateY(18px) );
+  // @include filter( drop-shadow(rgba($black, 0.5) 0 0 4px) drop-shadow(rgba($white, 0.9) 0 0 2px) );
+  position: relative;
+  &:before, &:after {
+    position: absolute;
+    display: block;
+    content: $space;
+    top: 50%;
+    border-bottom: 1px solid $orange-thin;
+  }
+  &:before {
+    width: 100%;
+    left: -110%;
+  }
+  &:after {
+    width: 114%;
+    left: 86%;
+  }
+  img {
+    border: none;
+  }
+}
+
+.site-name {
+  color: $orange;
+  padding-bottom: 0.125em;
+  text-align: center;
+  padding: 0 0.25em;
+  line-height: $base-line-height * 2;
+}
+
+.tagline {
+  text-align: center;
+  font-family: $avenir-next-rounded;
+  max-width: calc-em(280px, $base-font-size);
+  margin: 0 auto;
+  color: $blue;
+  padding-bottom: 0.5em;
+  .amp {
+    display: inline-block;
+    @include transform3d( scale(1.5) translateY(1px) );
+    opacity: 0.3;
+  }
+}
+
+.page-wrapper {
+  max-width: 1000px;
+  margin: 0 auto $base-line-height;
+  clear: both;
+}
+
+
+.image-right {
+  float: right;
+  margin: 0 0 0.5em 0.5em;
+}
+
+img {
+  border: 1px solid $gray-med;
+}
+
+
+h1[class*="title"] {
+  color: $white;
+  background-color: $orange;
+  $vert-padding: calc-em($base-font-size, nth($header-sizes, 1)) / 2;
+  padding: $vert-padding 0 $vert-padding 0.5em;
+  @include margin-trailer(0.5);
+}
+
+
+.page-title {
+  position: relative;
+  margin-bottom: calc-em(50px, nth($header-sizes, 1));
+  &:after {
+    content: $space;
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0.25em;
+    border-width: 0.5em 0.5em 0 0.5em;
+    border-style: solid;
+    border-color: $orange transparent transparent transparent;
+  }
+}
