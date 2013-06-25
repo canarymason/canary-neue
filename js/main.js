@@ -1,13 +1,12 @@
-
-$(function() {
+$(function () {
   console.log('Canary Promotion');
   var jPM = $.jPanelMenu({
-    beforeOpen: function() {
+    beforeOpen: function () {
       $('#wall').remove();
       $('.jPanelMenu-panel')
         .append('<div id="wall" data-module-type="Wall"></div>');
     },
-    beforeClose: function() {
+    beforeClose: function () {
       $('#wall').remove();
     }
   });

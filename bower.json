@@ -6,7 +6,10 @@
     "modernizr": "~2.6.2",
     "jquery": "~2.0.0",
     "prism": "latest",
-    "Element.details": "termi/Element.details"
+    "Element.details": "termi/Element.details",
+    "jPanelMenu": "acolangelo/jPanelMenu#~1.2.0",
+    "jRespond": "ten1seven/jRespond",
+    "FlexSlider": "woothemes/FlexSlider"
   },
   "devDependencies": {}
 }

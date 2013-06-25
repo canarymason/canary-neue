@@ -37,10 +37,9 @@
     <!-- {{{script-ext 'prism/prism.js' true}}} -->
     <!-- Polyfill for Details element -->
     <!-- {{{script-ext 'Element.details/__COMPILE/Element.details.js' true}}} -->
-    <script src="{{component-url 'jquery/jquery.min.js'}}"></script>
-    <script src="{{script-url 'jpanelmenu.js'}}"></script>
-    <script src="{{script-url 'main.js'}}"></script>
-
+    {{{script-ext 'jquery/jquery.min.js' true}}}
+    {{{script-ext 'jPanelMenu/jquery.jpanelmenu.min.js' true}}}
+    {{{script-ext 'main.js' }}}
 
   {{#if options.development}}
     <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':{{options.lrport}}/livereload.js?snipver=1"></' + 'script>')
