@@ -1,0 +1,1 @@
+$(function(){console.log("Canary Promotion");var a=$.jPanelMenu({beforeOpen:function(){$("#wall").remove(),$(".jPanelMenu-panel").append('<div id="wall" data-module-type="Wall"></div>')},beforeClose:function(){$("#wall").remove()}});a.on()});
