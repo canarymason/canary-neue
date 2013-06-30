@@ -8,7 +8,7 @@ $gray-dark          : #2d2d2d;
 $white              : white;
 $warm-white         : mix($white, $orange, 90%);
 $cool-white         : mix($white, $blue, 95%);
-
+$white-trans        : rgba($white, 0.2);
 
 $cs-primary:            $orange;
 // Primary color, can be any color you can use in CSS, plus CMYK from Color Schemer

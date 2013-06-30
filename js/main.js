@@ -1,5 +1,5 @@
 $(function () {
-  console.log('Canary Promotion');
+  // jpanel menu
   var jPM = $.jPanelMenu({
     beforeOpen: function () {
       $('#wall').remove();
@@ -11,4 +11,15 @@ $(function () {
     }
   });
   jPM.on();
+
+  // flexslider
+  $('.slideshow').flexslider({
+    selector: '.slides > .slide',
+    animation: 'slide',
+    prevText: 'left',
+    nextText: 'right',
+    itemWidth: 960
+  });
+  $('.flex-direction-nav a').addClass('ss-icon');
+
 });
