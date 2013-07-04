@@ -8,7 +8,7 @@
 $init-headers: true;
 $init-type: normalize;
 // use [Formalize](http://formalize.me/)
-$formalize: false;
+$formalize: true;
 
 // pixel-normalize
 // [A List Apart](http://www.alistapart.com/articles/a-pixel-identity-crisis/)
@@ -59,7 +59,7 @@ $border-links: false;
 $link-transitions: false;
 
 // Forms
-$kit-form-defaults: false;
+$kit-form-defaults: true;
 
 // Grid Variables
 // note: set grid system-specific variables in the grid section (06)

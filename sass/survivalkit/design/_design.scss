@@ -88,16 +88,16 @@
   }
 }
 
-[data-menu-position="open"] {
-  .jPanelMenu-panel {
-    > a,
-    > header,
-    > .container,
-    > #menu {
-      @include filter( grayscale(1) );
-    }
-  }
-}
+// [data-menu-position="open"] {
+//   .jPanelMenu-panel {
+//     > a,
+//     > header,
+//     > .container,
+//     > #menu {
+//       @include filter( grayscale(1) );
+//     }
+//   }
+// }
 
 .menu-trigger {
   float: right;
@@ -320,9 +320,28 @@ h1[class*="title"] {
 .social-media {
   ul {
     @include inline-list;
+    // display: block;
+    // text-align: center;
   }
   li {
     @include adjust-font-size-to(ms(4));
+  }
+  a {
+    display: inline-block;
+    background-color: $blue;
+    padding: 0.2em;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 46px;
+    text-align: center;
+    @include link-colors($background-color, $white, $white, $background-color, $background-color);
+    @include text-shadow(rgba($black, 0.3) 1px 1px 1px);
+    @include box-shadow(rgba($blue, 0.3) 0 0 0 4px);
+    &:hover {
+      background-color: $orange;
+      @include box-shadow(rgba($orange, 0.3) 0 0 0 4px);
+    }
   }
 }
 
@@ -368,6 +387,7 @@ h1[class*="title"] {
       float: right;
       border-left: 1px solid $gray-light;
       color: $blue;
+      font-size: 18px;
       @include text-shadow(rgba($white, 0.8) 1px 1px 0)
     }
   }

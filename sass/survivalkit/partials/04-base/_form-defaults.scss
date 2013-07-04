@@ -67,4 +67,8 @@
     @extend %constrain-to-parent;
   }
 
+  button {
+    border-radius: 0;
+  }
+
 }
