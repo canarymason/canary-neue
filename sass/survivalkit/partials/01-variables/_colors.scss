@@ -10,6 +10,8 @@ $warm-white         : mix($white, $orange, 90%);
 $cool-white         : mix($white, $blue, 95%);
 $white-trans        : rgba($white, 0.2);
 $orange-dark        : adjust-color($orange, $lightness: -10%);
+$blue-dark         : adjust-color($blue, $lightness: -10%);
+$gray-trans         : rgba($gray-light, 0.3);
 
 $cs-primary:            $orange;
 // Primary color, can be any color you can use in CSS, plus CMYK from Color Schemer

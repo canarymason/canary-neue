@@ -1,6 +1,9 @@
 $(function () {
   // jpanel menu
   var jPM = $.jPanelMenu({
+    afterOn: function () {
+      $('#menu').hide();
+    },
     beforeOpen: function () {
       $('#wall').remove();
       $('.jPanelMenu-panel')
@@ -16,10 +19,10 @@ $(function () {
   $('.slideshow').flexslider({
     selector: '.slides > .slide',
     animation: 'slide',
-    prevText: 'left',
-    nextText: 'right',
+    prevText: 'previous',
+    nextText: 'next',
     itemWidth: 960
   });
-  $('.flex-direction-nav a').addClass('ss-icon');
+  $('.flex-direction-nav a').addClass('ss-icon ss-standard');
 
 });
