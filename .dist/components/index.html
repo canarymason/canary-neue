@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width">
 
     <!-- Prototype CSS -->
-    <link rel="stylesheet" href="/canary-neue/css/prototype.css">
-    <link rel="stylesheet" href="/canary-neue/css/style.css">
+    <link rel="stylesheet" href="/css/prototype.css">
+    <link rel="stylesheet" href="/css/style.css">
     <!-- Prism CSS -->
-    <!-- <link rel="stylesheet" href="/canary-neue/components/prism/prism-okaidia.css"> -->
+    <!-- <link rel="stylesheet" href="/components/prism/prism-okaidia.css"> -->
 
     <!-- Async Webfonts -->
     
@@ -37,7 +37,7 @@
 
 
     <!-- Modernizr stays in the head -->
-    <script src="/canary-neue/components/modernizr/modernizr.js"></script>
+    <script src="/components/modernizr/modernizr.js"></script>
   </head>
 
   <body>
@@ -259,10 +259,13 @@
 
     <!-- JavaScript goes in the footer! -->
     <!-- Prism JavaScript -->
-    <script src="/canary-neue/components/prism/prism.js"></script>
+    <script src="/components/prism/prism.js"></script>
     <!-- Polyfill for Details element -->
-    <script src="/canary-neue/components/Element.details/__COMPILE/Element.details.js"></script>
+    <script src="/components/Element.details/__COMPILE/Element.details.js"></script>
 
+  
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':8001/livereload.js?snipver=1"></' + 'script>')
+    </script>
   
   </body>
 </html>
