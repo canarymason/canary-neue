@@ -136,7 +136,7 @@
 .logo {
   float: left;
   width: ms(5);
-  @include transform3d( translateY(4px) );
+  @include transform3d( translateY(2px) );
   @include breakpoint($bp-temp) {
     float: none;
     width: ms(8);
@@ -168,7 +168,9 @@
 
 .site-name {
   color: $orange;
+  font-size: ms(2);
   @include breakpoint($bp-temp) {
+    font-size: nth($header-sizes, 1);
     padding-bottom: 0.125em;
     text-align: center;
     padding: 0 0.25em;
@@ -179,17 +181,20 @@
 .tagline {
   font-family: $avenir-next-rounded;
   // @include ms-list(-3, 4);
-  font-size: calc-em(13px, $base-font-size);
+  font-size: calc-em(14px, $base-font-size);
   color: $blue;
   clear: left;
   // padding-left: calc-em(54px, $base-font-size);
   // max-width: calc-em(348px, $base-font-size);
   margin-bottom: 0;
+  padding-left: calc-em(22px, $base-font-size);
+  line-height: 1.4;
   @include breakpoint($bp-temp) {
     font-size: ms(0);
+    line-height: $base-line-height;
     text-align: center;
     margin: 0 auto;
-    // padding-left: 0;
+    padding-left: 0;
     padding-bottom: 0.5em;
     max-width: calc-em(280px, $base-font-size);
   }
