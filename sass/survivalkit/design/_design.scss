@@ -123,36 +123,43 @@
 
 .site-header {
   padding: 0 0.5em;
-  margin-bottom: 2em;
+  margin-bottom: 0;
   background-color: $white;
   border-bottom: 1px solid rgba($blue, 0.1);
+  @include breakpoint($bp-temp) {
+    margin-bottom: 2em;
+  }
 }
 
 .logo-site-name {}
 
 .logo {
-  // float: left;
-  width: ms(6);
-  width: ms(8);
-  display: block;
-  margin: 0 auto;
-  @include transform3d( translateY(18px) );
-  // @include filter( drop-shadow(rgba($black, 0.5) 0 0 4px) drop-shadow(rgba($white, 0.9) 0 0 2px) );
-  position: relative;
-  &:before, &:after {
-    position: absolute;
+  float: left;
+  width: ms(5);
+  @include transform3d( translateY(4px) );
+  @include breakpoint($bp-temp) {
+    float: none;
+    width: ms(8);
     display: block;
-    content: $space;
-    top: 50%;
-    border-bottom: 1px solid $orange-thin;
-  }
-  &:before {
-    width: 100%;
-    left: -110%;
-  }
-  &:after {
-    width: 114%;
-    left: 86%;
+    margin: 0 auto;
+    @include transform3d( translateY(18px) );
+    // @include filter( drop-shadow(rgba($black, 0.5) 0 0 4px) drop-shadow(rgba($white, 0.9) 0 0 2px) );
+    position: relative;
+    &:before, &:after {
+      position: absolute;
+      display: block;
+      content: $space;
+      top: 50%;
+      border-bottom: 1px solid $orange-thin;
+    }
+    &:before {
+      width: 100%;
+      left: -110%;
+    }
+    &:after {
+      width: 114%;
+      left: 86%;
+    }
   }
   img {
     border: none;
@@ -161,23 +168,36 @@
 
 .site-name {
   color: $orange;
-  padding-bottom: 0.125em;
-  text-align: center;
-  padding: 0 0.25em;
-  line-height: $base-line-height * 2;
+  @include breakpoint($bp-temp) {
+    padding-bottom: 0.125em;
+    text-align: center;
+    padding: 0 0.25em;
+    line-height: $base-line-height * 2;
+  }
 }
 
 .tagline {
-  text-align: center;
   font-family: $avenir-next-rounded;
-  max-width: calc-em(280px, $base-font-size);
-  margin: 0 auto;
+  // @include ms-list(-3, 4);
+  font-size: calc-em(13px, $base-font-size);
   color: $blue;
-  padding-bottom: 0.5em;
+  clear: left;
+  // padding-left: calc-em(54px, $base-font-size);
+  // max-width: calc-em(348px, $base-font-size);
+  margin-bottom: 0;
+  @include breakpoint($bp-temp) {
+    font-size: ms(0);
+    text-align: center;
+    margin: 0 auto;
+    // padding-left: 0;
+    padding-bottom: 0.5em;
+    max-width: calc-em(280px, $base-font-size);
+  }
   .amp {
     display: inline-block;
     @include transform3d( scale(1.5) translateY(1px) );
     opacity: 0.3;
+    margin: 0 0.125em;
   }
 }
 
@@ -293,9 +313,21 @@ h1[class*="title"] {
   li {
     @extend %vertical-separation-small;
     @extend %un-pad;
-    // border-bottom: 1px dashed $gray-med;
+    border-bottom: 1px dashed rgba($gray-light, 0.5);
+    a {
+      padding-left: 1.5em;
+      display: inline-block;
+      &:before {
+        margin: auto 0.5em auto -1.5em;
+        @include transform3d( translateY(0.25em) );
+        display: block;
+        float: left;
+        opacity: 0.5;
+      }
+    }
     &:nth-of-type(even) {
       background-color: $white;
+      // margin-left: -1em;
     }
   }
 }
