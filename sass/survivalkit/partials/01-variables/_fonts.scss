@@ -22,7 +22,10 @@ $font-amp: $font-slab;
 $font-cap: $font-sans;
 
 
+@import 'icons';
 
+// font settings
+$inline-fonts: true;
 
 ////////////////////////////
 // SYMBOLSET - STANDARD
@@ -31,9 +34,9 @@ $font-cap: $font-sans;
 // NOTE: mixin only includes sass/css
 // purchase the font and place in your fonts directory
 ////////////////////////////
-@import 'survivalkit/fonts/ss-standard';
-@include ss-standard-font-face;
-@include ss-standard-classes;
+// @import 'survivalkit/fonts/ss-standard';
+// @include ss-standard-font-face;
+// @include ss-standard-classes;
 
 ////////////////////////////
 // SYMBOLSET - SOCIAL

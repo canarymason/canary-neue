@@ -104,20 +104,7 @@
   min-width: 44px;
   line-height: 44px;
   text-align: center;
-  // @include link-colors($gray-med, $gray-light, $gray-light, $gray-med, $gray-med);
   @include link-colors($orange, $gray-light, $gray-light, $orange, $orange);
-  @include transform3d( rotate(-90deg) );
-  position: relative;
-  &:after {
-    position: absolute;
-    content: $space;
-    width: 75%;
-    height: 0;
-    bottom: 15px;
-    left: 50%;
-    border-bottom: 1px solid $orange;
-    @include transform3d( translateX(-50%) );
-  }
 }
 
 
@@ -323,11 +310,12 @@ h1[class*="title"] {
       padding-left: 1.5em;
       display: inline-block;
       &:before {
+        font-size: ms(1);
         margin: auto 0.5em auto -1.5em;
         @include transform3d( translateY(0.25em) );
         display: block;
         float: left;
-        opacity: 0.5;
+        opacity: 0.75;
       }
     }
     &:nth-of-type(even) {

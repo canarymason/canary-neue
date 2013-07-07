@@ -20,9 +20,8 @@ $(function () {
     selector: '.slides > .slide',
     animation: 'slide',
     prevText: 'previous',
-    nextText: 'next',
-    itemWidth: 960
+    nextText: 'next'
   });
-  $('.flex-direction-nav a').addClass('ss-icon ss-standard');
+  $('.flex-direction-nav a').addClass('icon-canary');
 
 });
