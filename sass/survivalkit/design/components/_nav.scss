@@ -1,0 +1,65 @@
+.main-nav {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  @extend %slab-light;
+  @include text-shadow(rgba($black, 0.4) 1px 1px 0);
+  ul {
+    @include inline-list;
+    #jPanelMenu-menu & {
+      display: block;
+      li {
+        display: block;
+      }
+    }
+  }
+}
+
+#jPanelMenu-menu {
+  background-color: $blue;
+  border-right: 1px solid shade($blue, 20%);
+  li {
+    text-align: right;
+  }
+  a {
+    @include link-colors($cool-white, $white, $white, $cool-white, $cool-white);
+    line-height: 44px;
+    border-bottom: 1px solid rgba(shade($blue, 20%), 0.5);
+    padding: 0 0.5em;
+  }
+  .jPanelMenu-panel & {
+    display: none;
+  }
+}
+
+#wall {
+  background-color: rgba($orange,  0.9);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: $zi-wall;
+  @include breakpoint(500px) {
+    background-color: rgba($white,  0.9);
+    border-left: 1em solid rgba($orange,  0.9);
+  }
+}
+
+// [data-menu-position="open"] {
+//   .jPanelMenu-panel {
+//     > a,
+//     > header,
+//     > .container,
+//     > #menu {
+//       @include filter( grayscale(1) );
+//     }
+//   }
+// }
+
+.menu-trigger {
+  float: right;
+  min-width: 44px;
+  line-height: 44px;
+  text-align: center;
+  @include link-colors($orange, $gray-light, $gray-light, $orange, $orange);
+}

@@ -1,0 +1,49 @@
+.bird-feed {
+  @extend %vertical-separation;
+  article {
+    @extend %vertical-separation-border;
+    > h1 {
+      @extend %article-header;
+      color: $blue;
+    }
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .img-wrapper {
+    min-width: 320px;
+    margin: 0 -0.5em 0.5em;
+    position: relative;
+    &:before, &:after {
+      position: absolute;
+      content: $space;
+      width: 0;
+      height: 0;
+      border: {
+        width: 0.5em 0.5em 0;
+        style: solid;
+      }
+    }
+    &:before {
+      top: 0;
+      left: 0.5em;
+      border: {
+        color: $background-color $transparent $transparent;
+      }
+    }
+    &:after {
+      bottom: -0.5em;
+      left: 0.5em;
+      border: {
+        color: $gray-med $transparent $transparent;
+      }
+    }
+  }
+  img {
+    border: {
+      width: 0 0 1px 0;
+    }
+  }
+}

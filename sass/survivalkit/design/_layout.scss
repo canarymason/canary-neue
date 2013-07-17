@@ -1,0 +1,36 @@
+$grids: 2;
+$grids: add-grid(compound(4, 5) at $bp-temp);
+// $grids: ratio(golden(), 4, 'large');
+// $grids: ratio-spiral();
+$gutters: 1/8;
+$gutters: add-gutter(1/3 at $bp-temp);
+
+[class*="container"] {
+  @include background-grid();
+}
+
+
+
+@include breakpoint($bp-temp) {
+  [class*="container"] {
+    @include clearfix();
+  }
+  .slideshow {
+    @include grid-span(5, 1);
+  }
+  .testimonials {
+    @include grid-span(3, 6);
+  }
+  .press-room {
+    @include grid-span(3, 6);
+    clear: both;
+  }
+  .bird-feed {
+    @include grid-span(5, 1);
+    clear: both;
+  }
+  .social-media {
+    @include grid-span(2, 7);
+    clear: both;
+  }
+}

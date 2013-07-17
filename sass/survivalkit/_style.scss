@@ -14,6 +14,8 @@
 @import "breakpoint";  // http://breakpoint-sass.com
 @import "modular-scale"; // https://github.com/scottkellum/modular-scale
 @import "toolkit"; // http://canarymason.github.com/Survival-Kit
+@import "singularitygs"; // http://canarymason.github.com/Survival-Kit
+@import "singularity-extras"; // http://canarymason.github.com/Survival-Kit
 // add any others here
 
 
@@ -53,7 +55,16 @@
 // ✔ YOUR CUSTOM LAYOUT AND DESIGN SASS
 // THIS IS WHERE MOST CUSTOM WORK WILL GO
 @import "design/design";
+@import "design/layout";
+@import "design/components/logo";
+@import "design/components/nav";
+@import "design/components/titles";
 @import "design/components/hero-slideshow";
+@import "design/components/bird-feed";
+@import "design/components/press-room";
+@import "design/components/testimonials";
+@import "design/components/social-media";
+@import "design/components/footer";
 // --------------------------------------------------------------------------------------
 
 // ✔ 8. ENABLE PRINT STYLES

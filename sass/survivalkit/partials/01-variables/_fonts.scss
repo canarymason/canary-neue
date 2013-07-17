@@ -1,14 +1,17 @@
 // Webfonts
-$josefin-slab: 'Josefin Slab';
-$avenir-next: 'AvenirNextLTW02-Regular';
-$avenir-next-rounded: 'AvenirNextRoundedW01-Re';
+// $josefin-slab: 'Josefin Slab';
+// $avenir-next: 'AvenirNextLTW02-Regular';
+// $avenir-next-rounded: 'AvenirNextRoundedW01-Re';
+// $avenir-next-condensed: 'AvenirNextLTW02-Condens 724398';
+$archer: 'Archer SSm A', 'Archer SSm B';
+$whitney: 'Whitney SSm A', 'Whitney SSm B';
 
 // Default font stacks
-$font-sans: $avenir-next, sans;
-$font-sans-rounded: $avenir-next-rounded, sans;
-$font-serifs: Georgia, serif;
-$font-slab: $josefin-slab, $font-serifs;
-$font-mono: Consolas, Menlo, "Courier New", monospace, monospace;
+$font-sans: $whitney, sans;
+// $font-sans-rounded: $avenir-next-rounded, sans;
+$font-serifs: $archer, Georgia, serif;
+$font-slab: $archer, $font-serifs;
+$font-mono: 'Source Code Pro', Consolas, Menlo, "Courier New", monospace, monospace;
 
 // General font variables
 $font-body: $font-sans;

@@ -3,6 +3,7 @@ components
 !.dist/components
 !pages/components
 !partials/components
+!sass/survivalkit/design/components
 .www
 .sass-cache
 .compass

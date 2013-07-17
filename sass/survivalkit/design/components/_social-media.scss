@@ -1,0 +1,13 @@
+.social-media {
+  ul {
+    @include inline-list;
+    // display: block;
+    // text-align: center;
+  }
+  li {
+    @include adjust-font-size-to(ms(4));
+  }
+  a {
+    @include link-colors($blue, $orange, $orange, $blue, $blue);
+  }
+}

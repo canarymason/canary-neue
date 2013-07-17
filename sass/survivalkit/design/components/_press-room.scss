@@ -1,0 +1,29 @@
+.press-room {
+  @extend %vertical-separation;
+  ul {
+    @include no-bullets;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  li {
+    @extend %vertical-separation-small;
+    @extend %un-pad;
+    border-bottom: 1px dashed rgba($gray-light, 0.5);
+    a {
+      padding-left: 1.5em;
+      display: inline-block;
+      &:before {
+        font-size: ms(1);
+        margin: auto 0.5em auto -1.5em;
+        @include transform3d( translateY(0.25em) );
+        display: block;
+        float: left;
+        opacity: 0.75;
+      }
+    }
+    &:nth-of-type(even) {
+      background-color: $white;
+      // margin-left: -1em;
+    }
+  }
+}

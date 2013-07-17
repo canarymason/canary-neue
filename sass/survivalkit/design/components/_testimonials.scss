@@ -1,0 +1,15 @@
+.testimonials {
+  @extend %vertical-separation;
+  article {
+    @extend %vertical-separation-border;
+    h1 {
+      @extend %article-header;
+      color: $blue;
+    }
+    blockquote {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

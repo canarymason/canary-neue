@@ -25,7 +25,7 @@ prototype:
     # Typekit Kit ID (uses advanced loading method)
     typekit: false
     # Copy in the the families from inside the brackets [] from the JavaScript tab. Be sure to wrap it in "double quotes".
-    googleFonts: "'Josefin+Slab:300,400,600,700,300italic,400italic,600italic,700italic:latin'"
+    googleFonts: false
 
 ## Main Navigation Sections
 sections:
@@ -108,6 +108,7 @@ compass:
   extensions:
     - style-prototypes
     - survivalkit
+    - singularity-extras
 
 #########################
 ## Versioning
