@@ -1,9 +1,10 @@
 $grids: 2;
-$grids: add-grid(compound(4, 5) at $bp-temp);
-// $grids: ratio(golden(), 4, 'large');
+// $grids: add-grid(compound(4, 5) at $bp-temp);
+// $grids: add-grid(2 at $bp-temp);
+$grids: add-grid(ratio(golden(), 2, 'large') at $bp-temp);
 // $grids: ratio-spiral();
 $gutters: 1/8;
-$gutters: add-gutter(1/3 at $bp-temp);
+$gutters: add-gutter(1/12 at $bp-temp);
 
 [class*="container"] {
   @include background-grid();
@@ -16,21 +17,24 @@ $gutters: add-gutter(1/3 at $bp-temp);
     @include clearfix();
   }
   .slideshow {
-    @include grid-span(5, 1);
+    @include grid-span(1, 1);
   }
-  .testimonials {
-    @include grid-span(3, 6);
+  .wrapper-a {
+    @include grid-span(1, 2);
   }
-  .press-room {
-    @include grid-span(3, 6);
-    clear: both;
-  }
+  // .testimonials {
+  //   @include grid-span(1, 2);
+  // }
+  // .press-room {
+  //   @include grid-span(1, 2);
+  //   clear: right;
+  // }
+  // .social-media {
+  //   @include grid-span(1, 2);
+  //   clear: right;
+  // }
   .bird-feed {
-    @include grid-span(5, 1);
-    clear: both;
-  }
-  .social-media {
-    @include grid-span(2, 7);
-    clear: both;
+    @include grid-span(1, 1);
+    clear: left;
   }
 }
