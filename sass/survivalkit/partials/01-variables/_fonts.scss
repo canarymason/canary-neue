@@ -4,13 +4,15 @@
 // $avenir-next-rounded: 'AvenirNextRoundedW01-Re';
 // $avenir-next-condensed: 'AvenirNextLTW02-Condens 724398';
 $archer: 'Archer SSm A', 'Archer SSm B';
+$archer-sc: 'Archer SSm small caps A', 'Archer SSm small caps B';
 $whitney: 'Whitney SSm A', 'Whitney SSm B';
+$whitney-sc: 'Whitney SSm small caps A', 'Whitney SSm small caps B';
 
 // Default font stacks
 $font-sans: $whitney, sans;
 // $font-sans-rounded: $avenir-next-rounded, sans;
 $font-serifs: $archer, Georgia, serif;
-$font-slab: $archer, $font-serifs;
+$font-slab: $font-serifs;
 $font-mono: 'Source Code Pro', Consolas, Menlo, "Courier New", monospace, monospace;
 
 // General font variables

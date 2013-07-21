@@ -18,16 +18,10 @@
       line-height: $base-line-height * 1.5;
     // }
   }
-  // &:not(.site-name) {
-  //   color: $white;
-  //   background-color: $orange;
-  //   $vert-padding: calc-em($base-font-size, nth($header-sizes, 1)) / 2;
-  //   padding: $vert-padding 0 $vert-padding 0.5em;
-  // }
 }
 
 %h2 {
-  @extend %slab-bold;
+  @extend %slab-medium;
   @if $set-header-sizes == true {
     @if $adjust-font-size-to == true {
       @include adjust-font-size-to(nth($header-sizes, 2));
@@ -41,7 +35,7 @@
 }
 
 %h3 {
-  @extend %slab-bold;
+  @extend %slab-medium;
   @if $set-header-sizes == true {
     @if $adjust-font-size-to == true {
       @include adjust-font-size-to(nth($header-sizes, 3));
@@ -54,7 +48,7 @@
 }
 
 %h4 {
-  @extend %slab-heavy;
+  @extend %slab-medium;
   @if $set-header-sizes == true {
     @if $adjust-font-size-to == true {
       @include adjust-font-size-to(nth($header-sizes, 4));
@@ -67,7 +61,7 @@
 }
 
 %h5 {
-  @extend %slab-heavy;
+  @extend %slab-medium;
   @if $set-header-sizes == true {
     @if $adjust-font-size-to == true {
       @include adjust-font-size-to(nth($header-sizes, 5));
@@ -80,7 +74,7 @@
 }
 
 %h6 {
-  @extend %slab-heavy;
+  @extend %slab-medium;
   @if $set-header-sizes == true {
     @if $adjust-font-size-to == true {
       @include adjust-font-size-to(nth($header-sizes, 6));

@@ -1,10 +1,26 @@
 .bird-feed {
   @extend %vertical-separation;
+  .section-title {
+    margin-right: 0;
+    padding-right: 0;
+  }
   article {
-    @extend %vertical-separation-border;
+    @extend %vertical-separation;
+    @include padding-leader(0.5);
+    @extend %un-pad;
+    &:nth-of-type(even) {
+      background-color: $white;
+      .img-wrapper:before {
+        border: {
+          color: $white $transparent $transparent;
+        }
+      }
+    }
     > h1 {
       @extend %article-header;
       color: $blue;
+      border-bottom: 1px dashed $gray-trans;
+      @include trailer;
     }
     p {
       &:last-child {
@@ -13,7 +29,7 @@
     }
   }
   .img-wrapper {
-    min-width: 320px;
+    max-width: 320px;
     margin: 0 -0.5em 0.5em;
     position: relative;
     &:before, &:after {
@@ -39,6 +55,30 @@
       border: {
         color: $gray-med $transparent $transparent;
       }
+    }
+    @include breakpoint($bp-blog-img-center) {
+      max-width: 320px;
+      margin: 0 auto 0.5em;
+    }
+    @include breakpoint($bp-blog-2col) {
+      @include grid-span(1, 2);
+      margin-left: gutter-span();
+      &:before {
+        display: none;
+      }
+      &:after {
+        bottom: auto;
+        left: -0.5em;
+        top: 0.5em;
+        border: {
+          width: 0.5em 0.5em 0.5em 0;
+          color: $transparent $gray-med $transparent $transparent;
+        }
+      }
+    }
+    @include breakpoint($bp-blog-thirds) {
+      @include grid-span(1, 2, (4 3));
+      margin-left: gutter-span($grid: (4 3), $gutter: 1/4);
     }
   }
   img {

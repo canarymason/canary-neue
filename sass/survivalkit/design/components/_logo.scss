@@ -1,10 +1,14 @@
-.site-header {
-  padding: 0 0.5em;
-  margin-bottom: 0;
+@mixin header-bg {
   background-color: $white;
-  padding-bottom: 0.5em;
   border-bottom: 1px solid rgba($blue, 0.1);
-  @include breakpoint($bp-temp) {
+}
+
+.site-header {
+  @include header-bg;
+  padding: 0 0.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: 0;
+  @include breakpoint($bp-big-logo) {
     padding-bottom: 0;
     margin-bottom: 2em;
   }
@@ -14,19 +18,18 @@
 
 .logo {
   opacity: 0.2;
-  // float: left;
   position: absolute;
   width: ms(9);
   @include transform3d( translateY(25px) translateX(234px) rotateZ(-8deg) );
-  @include breakpoint($bp-temp) {
+  @include breakpoint($bp-nav) {
+    @include transform3d( translateY(-4px) translateX(268px) rotateZ(-8deg) );
+  }
+  @include breakpoint($bp-big-logo) {
     opacity: 1;
     position: static;
-    // float: none;
-    // width: ms(8);
     display: block;
     margin: 0 auto;
     @include transform3d( translateY(18px) );
-    // @include filter( drop-shadow(rgba($black, 0.5) 0 0 4px) drop-shadow(rgba($white, 0.9) 0 0 2px) );
     position: relative;
     &:before, &:after {
       position: absolute;
@@ -51,11 +54,9 @@
 
 .site-name {
   color: $orange;
-  @include ms-list(2, 3);
   font-size: calc-em(28px, $base-font-size);
   font-weight: 600;
-  // padding-left: calc-em(14px, $base-font-size);
-  @include breakpoint($bp-temp) {
+  @include breakpoint($bp-big-logo) {
     font-size: nth($header-sizes, 1);
     font-weight: 400;
     padding-bottom: 0.125em;
@@ -66,26 +67,19 @@
 }
 
 .tagline {
-  font-family: $whitney;
+  font-family: $whitney-sc;
   font-size: 14px;
-  // font-size: calc-em(14px, $base-font-size);
   line-height: 1.1;
-  // @include ms-list(-3, 4);
   color: $blue;
   clear: left;
-  // padding-left: calc-em(22px, $base-font-size);
-  // max-width: calc-em(348px, $base-font-size);
   margin-bottom: 0;
-  // padding-left: calc-em(22px, $base-font-size);
-  // max-width: ms(15);
   max-width: calc-em(234px, 14px);
-  @include breakpoint($bp-temp) {
-    // font-family: $whitney;
+  // @extend %smallcaps;
+  @include breakpoint($bp-big-logo) {
     font-size: ms(0);
     line-height: $base-line-height;
     text-align: center;
     margin: 0 auto;
-    // padding-left: 0;
     padding-bottom: 0.5em;
     max-width: calc-em(300px, $base-font-size);
   }
@@ -95,7 +89,7 @@
     @include transform3d( scale(1.5) translateY(0px) );
     opacity: 0.3;
     margin: 0 0.125em;
-    @include breakpoint($bp-temp) {
+    @include breakpoint($bp-big-logo) {
       @include transform3d( scale(1.5) translateY(1px) );
     }
   }

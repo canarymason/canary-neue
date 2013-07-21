@@ -1,9 +1,9 @@
 $(function () {
   // jpanel menu
   var jPM = $.jPanelMenu({
-    afterOn: function () {
-      $('#menu').hide();
-    },
+    // afterOn: function () {
+    //   $('#menu').hide();
+    // },
     beforeOpen: function () {
       $('#wall').remove();
       $('.jPanelMenu-panel')
@@ -14,6 +14,13 @@ $(function () {
     }
   });
   jPM.on();
+
+  // $(window).resize(function(){
+  //   if ($('#main-menu-toggle').is(':hidden') && jPM.isOpen()) {
+  //     jPM.close();
+  //   }
+  //   $('.jPanelMenu-panel').css('min-height', $(window).height());
+  // });
 
   // flexslider
   $('.slideshow').flexslider({

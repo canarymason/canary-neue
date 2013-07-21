@@ -11,5 +11,18 @@
         margin-bottom: 0;
       }
     }
+    @include breakpoint($bp-testimonials-2col) {
+      border-bottom: none;
+      &:nth-of-type(odd) {
+        @include grid-span(1, 1);
+        clear: both;
+      }
+      &:nth-of-type(even) {
+        @include grid-span(1, 2);
+      }
+      &:nth-of-type(odd):last-of-type {
+        width: 100%;
+      }
+    }
   }
 }

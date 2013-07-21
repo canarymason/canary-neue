@@ -2,13 +2,15 @@ h1[class*="title"] {
   color: $white;
   background-color: $orange;
   $vert-padding: calc-em($base-font-size, nth($header-sizes, 1)) / 2;
-  margin-left: -0.5em;
   margin-left: calc-em(-9px, nth($header-sizes, 1));
   margin-right: calc-em(-9px, nth($header-sizes, 1));
   padding: $vert-padding calc-em(9px, nth($header-sizes, 1));
   @include margin-trailer(0.5);
   a {
-    @include link-colors($white, $gray-med, $gray-med, $white, $white);
+    @include link-colors($white, $white, $white, $white, $white);
+    &:hover {
+      text-shadow: $blue 2px 2px 0;
+    }
   }
 }
 

@@ -75,7 +75,18 @@ $animate-all-the-things: false;
 $zi-wall: 100;
 
 // BREAKPOINTS
-$bp-temp: 500px;
+$breakpoint-to-ems: true;
+$breakpoint-no-query-fallbacks: true;
+$bp-multicol: 950px;
+$bp-golden-2: 760px;
+$bp-big-logo: (480px) (min-height 1000px);
+$bp-testimonials-2col: 500px ($bp-multicol - 1);
+$bp-press-2col: $bp-golden-2 ($bp-multicol - 1);
+$bp-blog-2col: 500px;
+$bp-blog-thirds: 700px ($bp-multicol - 1);
+$bp-blog-img-center: (320px + 1) ($bp-blog-2col - 1);
+$bp-slider-overlay: 560px;
+$bp-nav: 780px;
 
 ////////////////////////////
 // COMPASS DEFAULTS
@@ -190,7 +201,7 @@ $bp-temp: 500px;
 // VERTICAL RHYTHM
 // $default-rhythm-border-style: solid;
 // $relative-font-sizing: true;
-$round-to-nearest-half-line: true;
+// $round-to-nearest-half-line: true;
 // $min-line-padding: 2px;
 // $font-unit: if($relative-font-sizing, 1em, $base-font-size);
 

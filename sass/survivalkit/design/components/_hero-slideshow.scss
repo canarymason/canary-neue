@@ -1,8 +1,7 @@
 .slideshow {
   margin: 0 -0.5em 2em;
   position: relative;
-  background: rgba($white, 0.8);
-  // @include box-shadow( rgba($blue, 0.5) 0 0 0 0.5em);
+  background-color: $blue-light;
   border: {
     color: rgba($blue, 0.5);
     style: solid;
@@ -25,7 +24,8 @@
       padding: 0.2em 0.5em;
       width: 100%;
       text-shadow: rgba($white, 0.3) 1px 1px 0;
-      @include breakpoint($bp-temp) {
+      background-color: $blue-light;
+      @include breakpoint($bp-slider-overlay) {
         position: absolute;
         bottom: 0;
         background: rgba($white, 0.8);

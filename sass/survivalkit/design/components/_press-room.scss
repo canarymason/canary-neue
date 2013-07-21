@@ -4,6 +4,10 @@
     @include no-bullets;
     margin-left: 0;
     padding-left: 0;
+    // @include breakpoint($bp-press-2col) {
+    //   @include column-count(2);
+    //   @include column-gap(3.5em);
+    // }
   }
   li {
     @extend %vertical-separation-small;
@@ -25,5 +29,8 @@
       background-color: $white;
       // margin-left: -1em;
     }
+    // @include breakpoint($bp-press-2col) {
+    //   background-color: $white;
+    // }
   }
 }

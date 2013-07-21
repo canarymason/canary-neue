@@ -37,8 +37,8 @@
 }
 
 %smallcaps {
-  @extend %caps;
-  font-variant: small-caps;
+  $font-family: $whitney-sc;
+  font-weight: 400;
 }
 
 %dquo {
@@ -48,17 +48,17 @@
 
 %slab-light {
   font-family: $font-slab;
-  font-weight: 100;
+  font-weight: 400;
 }
 %slab-medium {
   font-family: $font-slab;
-  font-weight: 300;
+  font-weight: 500;
 }
 %slab-bold {
   font-family: $font-slab;
-  font-weight: 600;
+  font-weight: 800;
 }
-%slab-heavy {
-  font-family: $font-slab;
-  font-weight: 700;
+%slab-sc-medium {
+  font-family: $archer-sc;
+  font-weight: 500;
 }

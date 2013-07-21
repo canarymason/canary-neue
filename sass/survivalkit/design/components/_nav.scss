@@ -1,22 +1,88 @@
-.main-nav {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  @extend %slab-light;
-  @include text-shadow(rgba($black, 0.4) 1px 1px 0);
-  ul {
-    @include inline-list;
-    #jPanelMenu-menu & {
-      display: block;
-      li {
-        display: block;
+.jPanelMenu-panel {
+  @include breakpoint($bp-nav) {
+    @include display-box;
+    @include box-orient(vertical);
+    // @include box-align(stretch);
+    @include box-direction(column);
+    .site-header {
+      @include box-ordinal-group(1);
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+    > .container {
+      @include box-ordinal-group(3);
+    }
+    .container-footer {
+      @include box-ordinal-group(4);
+    }
+    #menu {
+      @include box-ordinal-group(2);
+      @include header-bg;
+      padding: 0.5em 0;
+      margin-bottom: 2em;
+      ul {
+        @include display-box;
+        @include box-orient(horizontal);
+        @include box-align(stretch);
+        padding-left: 0;
+        margin: 0 1em;
+        li {
+          @include box-flex(1);
+          border: {
+            width: 1px 0;
+            style: solid;
+            color: $orange;
+          }
+          padding: 0 0.25em;
+          margin: 0 0.25em;
+          text-align: center;
+          // position: relative;
+          // &:before {
+          //   position: absolute;
+          //   content: $space;
+          //   width: 80%;
+          //   height: 1em;
+          //   top: 100%;
+          //   left: 50%;
+          //   @include transform3d( translateX(-50%) );
+          //   background: {
+          //     color: $badass;
+          //   }
+          // }
+          &:hover {
+            background-color: $background-color;
+            border-color: $blue;
+          }
+        }
       }
+    }
+    .no-flexbox & {
+      // fallback
     }
   }
 }
 
+.main-nav {
+  @extend %slab-sc-medium;
+  letter-spacing: 1px;
+  // ul {
+  //   // @include inline-list;
+  //   #jPanelMenu-menu & {
+  //     display: block;
+  //     li {
+  //       display: block;
+  //     }
+  //   }
+  // }
+}
+
 #jPanelMenu-menu {
+  @extend %slab-light;
   background-color: $blue;
   border-right: 1px solid shade($blue, 20%);
+  letter-spacing: 1px;
+  // text-transform: uppercase;
+  @include text-shadow(rgba($black, 0.4) 1px 1px 0);
   li {
     text-align: right;
   }
@@ -62,4 +128,7 @@
   line-height: 44px;
   text-align: center;
   @include link-colors($orange, $gray-light, $gray-light, $orange, $orange);
+  @include breakpoint($bp-nav) {
+    display: none;
+  }
 }

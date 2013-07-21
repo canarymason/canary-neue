@@ -1,11 +1,28 @@
 .social-media {
+  @include margin-trailer(0.5);
+  .section-title {
+    @extend %h2;
+    border-bottom: none;
+    color: $orange;
+    background-color: transparent;
+    // $vert-padding: calc-em($base-font-size, nth($header-sizes, 1)) / 2;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    display: inline;
+    &:after {
+      content: ": ";
+      margin-right: 0.25em;
+    }
+  }
   ul {
     @include inline-list;
     // display: block;
     // text-align: center;
-  }
-  li {
-    @include adjust-font-size-to(ms(4));
+    li {
+      @include adjust-font-size-to(ms(2));
+      margin-right: 0.25em;
+    }
   }
   a {
     @include link-colors($blue, $orange, $orange, $blue, $blue);

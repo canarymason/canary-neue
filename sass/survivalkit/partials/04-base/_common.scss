@@ -89,20 +89,29 @@ pre {
 }
 
 blockquote {
-  // @extend %slab-medium;
   margin: 0 0 $kit-baseline 1.5em;
   position: relative;
   &:before {
     content: "“";
     position: absolute;
+    @extend %slab-medium;
+    color: $orange-dark;
     top: 0.25em;
     left: -0.5em;
     font-size: 3em;
   }
+  p {
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
   footer {
     text-align: right;
+    color: $orange-darker;
     &:before {
       content: "~";
+      color: $blue;
+      margin-right: 0.25em;
     }
   }
 }

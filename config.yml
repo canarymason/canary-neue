@@ -107,8 +107,8 @@ compass:
   # If you would like to add more Compass extensions, be sure to include the extensions in your Gemfile and re-run `bundle install`
   extensions:
     - style-prototypes
-    - survivalkit
     - singularity-extras
+    - survivalkit
 
 #########################
 ## Versioning

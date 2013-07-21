@@ -5,5 +5,5 @@ source 'https://rubygems.org'
 
 # This is the gem containing all of the dependencies required for Style Prototypes
 gem 'style-prototypes', '~>1.1.0'
-gem 'survivalkit', '~>1.0.beta.15'
+gem 'survivalkit', '~>1.0.beta.16'
 gem 'singularity-extras'
