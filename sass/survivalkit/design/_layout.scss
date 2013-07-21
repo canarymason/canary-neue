@@ -12,7 +12,7 @@ $gutters: add-gutter(1/10 at $bp-golden-2);
 
 [class*="container"] {
   @include clearfix();
-  @include background-grid();
+  // @include background-grid();
 }
 
 
