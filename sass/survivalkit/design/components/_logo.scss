@@ -55,10 +55,10 @@
 .site-name {
   color: $orange;
   font-size: calc-em(28px, $base-font-size);
-  font-weight: 600;
+  // font-weight: 600;
+  font-weight: 400;
   @include breakpoint($bp-big-logo) {
     font-size: nth($header-sizes, 1);
-    font-weight: 400;
     padding-bottom: 0.125em;
     text-align: center;
     padding: 0 0.25em;
