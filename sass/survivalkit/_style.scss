@@ -56,6 +56,9 @@
 // THIS IS WHERE MOST CUSTOM WORK WILL GO
 @import "design/design";
 @import "design/layout";
+//
+@import "design/components/buttons";
+//
 @import "design/components/logo";
 @import "design/components/nav";
 @import "design/components/titles";
@@ -65,6 +68,7 @@
 @import "design/components/testimonials";
 @import "design/components/social-media";
 @import "design/components/footer";
+//
 // --------------------------------------------------------------------------------------
 
 // ✔ 8. ENABLE PRINT STYLES

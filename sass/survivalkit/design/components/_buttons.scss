@@ -1,0 +1,12 @@
+@import "buttons/mixins";
+@import "buttons/extend";
+
+input[type="submit"] {
+  @extend %button;
+}
+input[type="reset"] {
+  @extend %button;
+}
+button {
+  @extend %button;
+}

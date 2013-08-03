@@ -8,7 +8,7 @@
 $init-headers: true;
 $init-type: normalize;
 // use [Formalize](http://formalize.me/)
-$formalize: true;
+$formalize: false;
 
 // pixel-normalize
 // [A List Apart](http://www.alistapart.com/articles/a-pixel-identity-crisis/)
@@ -59,7 +59,7 @@ $border-links: false;
 $link-transitions: false;
 
 // Forms
-$kit-form-defaults: true;
+$kit-form-defaults: false;
 
 // Grid Variables
 // note: set grid system-specific variables in the grid section (06)
@@ -77,8 +77,9 @@ $zi-wall: 100;
 // BREAKPOINTS
 $breakpoint-to-ems: true;
 $breakpoint-no-query-fallbacks: true;
-$bp-multicol: 950px;
 $bp-golden-2: 760px;
+$bp-multicol: 950px;
+$bp-golden-3: 1400px;
 $bp-big-logo: (480px) (min-height 1000px);
 $bp-testimonials-2col: 500px ($bp-multicol - 1);
 $bp-press-2col: $bp-golden-2 ($bp-multicol - 1);

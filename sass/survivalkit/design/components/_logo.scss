@@ -67,14 +67,14 @@
 }
 
 .tagline {
-  // font-family: $whitney-sc;
-  font-family: $whitney;
+  font-family: $whitney-sc;
+  // font-family: $whitney;
   font-size: 14px;
   line-height: 1.1;
   color: $blue;
   clear: left;
   margin-bottom: 0;
-  max-width: calc-em(234px, 14px);
+  max-width: calc-em(260px, 14px);
   // @extend %smallcaps;
   @include breakpoint($bp-big-logo) {
     font-size: ms(0);

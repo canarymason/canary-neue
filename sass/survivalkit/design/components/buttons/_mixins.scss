@@ -1,0 +1,36 @@
+@mixin button-base {
+  border-radius: 0.2em;
+  border: {
+    width: 1px;
+    style: solid;
+  }
+  font: {
+    family: sans-serif;
+    weight: normal;
+    size: 0.9rem;
+  }
+  line-height: 1.25;
+  text-transform: uppercase;
+  padding: 0.2em 0.5em;
+}
+
+@mixin button-colors($button-color: $gray-lighter, $button-text-color: $gray-dark) {
+  color: $button-text-color;
+  background: {
+    color: $button-color;
+  }
+  border: {
+    color: adjust-color($button-color, $lightness: -10%)
+  }
+  text-shadow: adjust-color($button-color, $lightness: 15%) 1px 1px 0;
+  &:hover {
+    background: {
+      color: adjust-color($button-color, $lightness: 5%);
+    }
+  }
+  &:active {
+    background: {
+      color: adjust-color($button-color, $lightness: 10%);
+    }
+  }
+}

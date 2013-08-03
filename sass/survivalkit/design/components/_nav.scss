@@ -1,3 +1,19 @@
+// @function bird-position($i, $total-birds: 7, $start-pos: 50%, $split: 50%) {
+//   $slices: $split / $total-birds;
+//   $slice: $slices * $i;
+//   $end-pos: $start-pos + $slice;
+//   @return $end-pos;
+// }
+// @function bird-flip($i) {
+//   $flip: 0%;
+//   @if ($i % 2 == 0) {
+//     $flip: 48%;
+//   } @else {
+//     $flip: 100%;
+//   }
+//   @return $flip;
+// }
+
 .jPanelMenu-panel {
   @include breakpoint($bp-nav) {
     @include display-box;
@@ -28,36 +44,75 @@
         margin: 0 1em;
         li {
           @include box-flex(1);
-          border: {
-            width: 1px 0;
-            style: solid;
-            color: $orange;
-          }
+          // border: {
+          //   width: 1px 0;
+          //   style: solid;
+          //   color: $gray-lighter;
+          // }
           padding: 0 0.25em;
           margin: 0 0.25em;
           text-align: center;
-          // position: relative;
-          // &:before {
-          //   position: absolute;
-          //   content: $space;
-          //   width: 80%;
-          //   height: 1em;
-          //   top: 100%;
-          //   left: 50%;
-          //   @include transform3d( translateX(-50%) );
-          //   background: {
-          //     color: $badass;
-          //   }
-          // }
+          // text-transform: uppercase;
+          position: relative;
+          @include transition(all 0.5s ease);
+          @for $i from 1 through 7 {
+            &:nth-of-type(#{$i}) {
+              // @debug bird-flip($i);
+              &:before {
+                background: {
+                  image: image-url('birds/bird-0#{$i}.svg');
+                }
+              }
+            }
+          }
+          &:before {
+            position: absolute;
+            content: $space;
+            width: 45px;
+            height: 45px;
+            // left: 50%;
+            top: -100%;
+            // border-radius: 50%;
+            opacity: 0.2;
+            @include transform3d( translateX(-75%) translateY(10%) scale(0.6) );
+            @include transition(all 0.5s ease);
+            // border: 1px solid rgba($gray, 0.8);
+            background: {
+              repeat: no-repeat;
+              // color: $gray-lighter;
+              position: 50% 50%;
+            }
+            z-index: 0;
+          }
           &:hover {
-            background-color: $background-color;
+            // background-color: $background-color;
             border-color: $blue;
+            &:before {
+              opacity: 0.8;
+              background-color: $blue;
+            }
+          }
+          // &:before {
+          //   top: 100%;
+          // }
+          // &:after {
+          //   bottom: 100%;
+          // }
+          a {
+            position: relative;
+            z-index: 1
           }
         }
       }
     }
     .no-flexbox & {
       // fallback
+    }
+  }
+  .main-nav {
+    max-width: 1000px;
+    @include breakpoint($bp-big-logo) {
+      margin: 0 auto;
     }
   }
 }
