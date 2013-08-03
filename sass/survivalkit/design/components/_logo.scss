@@ -22,7 +22,7 @@
   width: ms(9);
   @include transform3d( translateY(25px) translateX(234px) rotateZ(-8deg) );
   @include breakpoint($bp-nav) {
-    @include transform3d( translateY(-4px) translateX(268px) rotateZ(-8deg) );
+    @include transform3d( translateY(-4px) translateX(254px) rotateZ(-8deg) );
   }
   @include breakpoint($bp-big-logo) {
     opacity: 1;

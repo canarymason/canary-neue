@@ -7,11 +7,17 @@
     style: solid;
     width: 0.5em 0;
   }
+  @include breakpoint($bp-slideshow-border) {
+    border-width: 0 0 0.5em;
+  }
   .flex-viewport {
     border: {
       color: $blue;
       style: solid;
       width: 2px 0 1px;
+    }
+    @include breakpoint($bp-slideshow-border) {
+      border-width: 0 0 1px;
     }
   }
   figure {
