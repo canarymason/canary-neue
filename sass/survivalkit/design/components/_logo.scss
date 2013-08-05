@@ -1,5 +1,5 @@
 @mixin header-bg {
-  background-color: $white;
+  background-color: $gray-dark;
   border-bottom: 1px solid rgba($blue, 0.1);
 }
 
@@ -20,7 +20,13 @@
   opacity: 0.2;
   position: absolute;
   width: ms(9);
-  @include transform3d( translateY(25px) translateX(234px) rotateZ(-8deg) );
+  @include transform3d( translateY(-10px) translateX(256px) rotateZ(-8deg) );
+  svg {
+    max-width: 100%;
+  }
+  .svg-bird {
+    fill: $white;
+  }
   @include breakpoint($bp-nav) {
     @include transform3d( translateY(-4px) translateX(254px) rotateZ(-8deg) );
   }
@@ -36,7 +42,7 @@
       display: block;
       content: $space;
       top: 50%;
-      border-bottom: 1px solid $orange-thin;
+      border-bottom: 1px solid $gray-med-light;
     }
     &:before {
       width: 100%;
@@ -71,7 +77,7 @@
   // font-family: $whitney;
   font-size: 14px;
   line-height: 1.1;
-  color: $blue;
+  color: $gray-med-light;
   clear: left;
   margin-bottom: 0;
   max-width: calc-em(260px, 14px);

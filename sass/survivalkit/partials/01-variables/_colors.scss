@@ -5,6 +5,8 @@ $blue               : #13999d;
 $gray-light         : #878785;
 $gray-med           : #3d3d3d;
 $gray-dark          : #2d2d2d;
+$gray-med-light     : adjust-color($gray-light, $lightness: 20%);
+$gray-darker        : adjust-color($gray-dark, $lightness: -10%);
 $gray-lighter       : #ECECEC;
 $white              : white;
 $warm-white         : mix($white, $orange, 90%);

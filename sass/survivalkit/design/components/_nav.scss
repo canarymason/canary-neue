@@ -33,8 +33,10 @@
     }
     #menu {
       @include box-ordinal-group(2);
-      @include header-bg;
-      padding: 0.5em 0;
+      // @include header-bg;
+      background-color: $gray-darker;
+      padding: 0.5em 0 1.5em;
+      margin-bottom: -0.5em;
       ul {
         @include display-box;
         @include box-orient(horizontal);
@@ -99,6 +101,9 @@
             z-index: 1
           }
         }
+      }
+      a {
+        @include link-colors($gray-med-light, $white, $white, $gray-med-light);
       }
     }
     .no-flexbox & {
