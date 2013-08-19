@@ -9,3 +9,10 @@
     background-color: $background-color;
   }
 }
+
+
+/* KEYFRAME ANIMATION FOR THE LOGO */
+@mixin animate($name) {
+  @-webkit-keyframes #{$name} { @content; }
+  @-moz-keyframes #{$name} { @content; }
+}

@@ -73,6 +73,9 @@ $animate-all-the-things: false;
 
 // Z-INDEXES
 $zi-wall: 100;
+$zi-header: 0;
+$zi-menu: 1;
+$zi-content: 2;
 
 // BREAKPOINTS
 $breakpoint-to-ems: true;
@@ -88,6 +91,7 @@ $bp-blog-thirds: 700px ($bp-multicol - 1);
 $bp-blog-img-center: (320px + 1) ($bp-blog-2col - 1);
 $bp-slider-overlay: 560px;
 $bp-nav: 780px;
+$bp-nav-big-logo: ($bp-nav) (min-height 1000px);
 $bp-slideshow-border: $bp-nav;
 
 ////////////////////////////
