@@ -23,6 +23,9 @@ $orange-light       : tint($orange, 55%);;
 $blue-dark          : adjust-color($blue, $lightness: -10%);
 $gray-trans         : rgba($gray-light, 0.3);
 $blue-light         : adjust-color($blue, $lightness: 55%, $saturation: -40%);
+$blue-slate         : #2B3542;
+// $blue-slate-dim     : #2A323D;
+$blue-slate-mult    : blend-multiply(rgba($blue-slate, 0.2), $blue-slate);
 $blue-dim           : adjust-color($blue, $saturation: -5%);
 
 $cs-primary:            $orange;

@@ -109,6 +109,7 @@ compass:
     - style-prototypes
     - singularity-extras
     - survivalkit
+    - compass-blend-modes
 
 #########################
 ## Versioning

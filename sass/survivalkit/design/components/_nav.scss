@@ -27,7 +27,7 @@
       position: relative;
       z-index: $zi-menu;
       @include breakpoint($bp-nav-big-logo) {
-        background-color: $blue-dim;
+        background-color: $blue-slate-mult;
       }
       ul {
         @include display-box;

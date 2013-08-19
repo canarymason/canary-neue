@@ -1,5 +1,6 @@
 @mixin header-bg {
-  background-color: $blue;
+  // background-color: $blue;
+  background-color: $blue-slate;
   border-bottom: 1px solid rgba($blue, 0.1);
 }
 
@@ -26,7 +27,7 @@
   .svg-bird {
     fill: $white;
     @include breakpoint($bp-big-logo) {
-      fill: $orange-light;
+      fill: $orange;
     }
   }
   @include breakpoint($bp-nav) {
@@ -61,7 +62,7 @@
 }
 
 .site-name {
-  color: $orange-light;
+  color: $orange;
   font-size: calc-em(28px, $base-font-size);
   font-weight: 400;
   @include breakpoint($bp-big-logo) {
