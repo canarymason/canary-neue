@@ -121,6 +121,7 @@ blockquote {
 ol, ul {
   // @include trailer;
   // padding-left: $kit-gutter;
+  @extend %margin-pad-left-zero;
 }
 
 dl {

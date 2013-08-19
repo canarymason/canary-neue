@@ -1,0 +1,8 @@
+%canary-speech-bubble {
+  font-size: ms(1);
+  margin: auto 0.5em auto -1.5em;
+  @include transform3d( translateY(2px) scale(1.5) );
+  display: block;
+  float: left;
+  opacity: 0.75;
+}

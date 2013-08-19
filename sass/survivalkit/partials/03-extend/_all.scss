@@ -1,4 +1,5 @@
 @import "typography";
+@import "triangles";
 
 %un-pad {
   margin-left: -0.5em;
@@ -17,8 +18,12 @@
   @include vertical-separation($margin: $kit-baseline * 0.5);
 }
 
-%article-header {
-  font-size: calc-em(ms(2), $base-font-size);
-  line-height: calc-em(32px, ms(2));
-  margin-bottom: 0.25em;
+%margin-pad-zero {
+  margin: 0;
+  padding: 0;
+}
+
+%margin-pad-left-zero {
+  margin-left: 0;
+  padding-left: 0;
 }

@@ -1,0 +1,10 @@
+%triangle-down {
+  content: $space;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0.25em;
+  border-width: 0.5em 0.5em 0 0.5em;
+  border-style: solid;
+  border-color: $orange transparent transparent transparent;
+}

@@ -2,12 +2,6 @@
   @extend %vertical-separation;
   ul {
     @include no-bullets;
-    margin-left: 0;
-    padding-left: 0;
-    // @include breakpoint($bp-press-2col) {
-    //   @include column-count(2);
-    //   @include column-gap(3.5em);
-    // }
   }
   li {
     @extend %vertical-separation-small;
@@ -17,20 +11,11 @@
       padding-left: 1.5em;
       display: inline-block;
       &:before {
-        font-size: ms(1);
-        margin: auto 0.5em auto -1.5em;
-        @include transform3d( translateY(2px) scale(1.5) );
-        display: block;
-        float: left;
-        opacity: 0.75;
+        @extend %canary-speech-bubble;
       }
     }
     &:nth-of-type(even) {
       background-color: $white;
-      // margin-left: -1em;
     }
-    // @include breakpoint($bp-press-2col) {
-    //   background-color: $white;
-    // }
   }
 }

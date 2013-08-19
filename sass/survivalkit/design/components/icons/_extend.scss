@@ -1,0 +1,6 @@
+%icon-inline-list {
+  @include adjust-font-size-to(ms(2));
+  margin-right: 0.25em;
+  display: inline-block;
+  @include transform3d( translateY(4px) );
+}
