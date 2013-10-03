@@ -2,7 +2,7 @@
 ## Client Information
 #########################
 client:
-  name: canary2
+  name: Canary Promotion
   homepage: canarypromo.com
 
 #########################
@@ -93,7 +93,7 @@ colors:
 ## Server Options
 #########################
 server:
-  port: 8000
+  port: 7000
   # If remoteAccess is set to true, you will be able to access your prototype from any device connected to the same network as well as be able to remotely debug them.
   remoteAccess: false
 
