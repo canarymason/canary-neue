@@ -89,7 +89,7 @@ colors:
 ## Server Options
 #########################
 server:
-  port: 8000
+  port: 7000
 
 #########################
 ## Export Options
