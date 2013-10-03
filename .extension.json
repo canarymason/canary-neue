@@ -1,7 +1,7 @@
 {
   "extension": {
     "sass": [
-      "_canary-promotion-style-guide.scss",
+      "_canary2-style-guide.scss",
       "global/**/*",
       "partials/**/*"
     ],
@@ -13,6 +13,7 @@
     ],
     "fonts": [
       "**"
-    ]
+    ],
+    "license": "CC BY-NC-SA"
   }
 }

@@ -1,0 +1,13 @@
+<div class="prototype-group--message">
+  <ul component-list>
+    {{#each options.grunt.userConfig.components.message}}
+      <li>
+        {{{component "message" this}}}
+
+        {{#if ../page.examples}}
+          {{{create-example-html "message" ../this}}}
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>

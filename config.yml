@@ -2,14 +2,14 @@
 ## Client Information
 #########################
 client:
-  name: Canary Promotion
+  name: canary2
   homepage: canarypromo.com
 
 #########################
 ## Author Information
 #########################
 author:
-  name: Mason Wendell
+  name: Mason
   email: mason@thecodingdesigner.com
 
 #########################
@@ -29,8 +29,7 @@ prototype:
 
 ## Main Navigation Sections
 sections:
-  Home: ''
-  Style Tile: style-tile
+  Style Tile: ''
   Elements: elements
   Typography: typography
   Components: components
@@ -44,11 +43,11 @@ styleTile:
   # Source links to inspirational images
   # Either relative paths from your images directory, or absolute paths to external images
   images:
-    - http://fillmurray.com/960/540/
-    - http://fillmurray.com/950/530/
-    - http://fillmurray.com/940/520/
-    - http://fillmurray.com/930/510/
-    - http://fillmurray.com/920/500/
+    - patterns/moon.jpg
+    - patterns/ice.jpg
+    - patterns/iceberg.jpg
+    - patterns/clouds.jpg
+    - http://lorempixel.com/output/abstract-q-c-640-480-1.jpg
   # Descriptive keywords for Style Tile
   keywords:
     - Default
@@ -60,18 +59,21 @@ styleTile:
 ## Component Guide
 #########################
 components:
-  messages:
+  message:
     - status
     - warning
     - error
-  buttons:
+  button:
     - Call to Action:
-      - call-to-action
+        classes:
+          - call-to-action
     - Big Button:
-      - big-button
+        classes:
+          - big-button
     - Warning Button:
-      - big-button
-      - red
+        classes:
+          - big-button
+          - warning
 
 #########################
 ## Color Guide
@@ -80,8 +82,10 @@ colors:
   # Variable names of the color variables being used
   variables:
     - black
-    - orange
-    - blue
+    - primary-tint
+    - primary-shade
+    - secondary-tint
+    - secondary-shade
   # The number of shades each color has
   shades: 6
 
@@ -89,7 +93,9 @@ colors:
 ## Server Options
 #########################
 server:
-  port: 7000
+  port: 8000
+  # If remoteAccess is set to true, you will be able to access your prototype from any device connected to the same network as well as be able to remotely debug them.
+  remoteAccess: false
 
 #########################
 ## Export Options
@@ -104,12 +110,12 @@ export:
 #########################
 compass:
   debugInfo: false
-  # If you would like to add more Compass extensions, be sure to include the extensions in your Gemfile and re-run `bundle install`
-  extensions:
-    - style-prototypes
-    - singularity-extras
-    - survivalkit
-    - compass-blend-modes
+  # Your dependencies should all go here. Style Prototypes will automatically generate your Bundler Gemfile and Gemfile.lock for you. If you run into dependency issues with Bundler, update your gem versions here.
+  dependencies:
+    sass: ">=3.2.0"
+    compass: '>=0.12.1'
+    style-prototypes: "~>1.3.0"
+    singularity-extras: "~>0.0.3"
 
 #########################
 ## Versioning

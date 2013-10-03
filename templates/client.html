@@ -6,45 +6,59 @@
 
     <title>{{page-title}}</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <!-- Prototype CSS -->
-    <!-- {{{style-ext 'prototype.css'}}} -->
-    {{{style-ext 'style.css'}}}
+    {{{style-ext 'prototype.css'}}}
+    {{#if page.examples}}
     <!-- Prism CSS -->
-    <!-- {{{style-ext 'prism/prism-okaidia.css' true}}} -->
+    {{{style-ext 'prism/prism-okaidia.css' true}}}
+    {{/if}}
 
     <!-- Async Webfonts -->
     {{> prototype-webfonts}}
-    {{> canary-webfonts}}
 
     <!-- Modernizr stays in the head -->
     {{{script-ext 'modernizr/modernizr.js' true}}}
   </head>
 
   <body>
-    {{> canary-header}}
-    <div class="container">
-      {{{body}}}
+    <div id="prototype-header">
+      <div class="content-wrapper">
+        {{> prototype-header}}
+      </div>
     </div>
-    <div class="container-footer">
+
+    <main>
+      {{> canary-header}}
+      <div class="body-wrapper">
+        {{{body}}}
+      </div>
       {{> canary-footer}}
-    </div>
-    {{> canary-menu}}
+      {{> canary-menu}}
+    </main>
 
     <!-- JavaScript goes in the footer! -->
+    {{#if page.examples}}
     <!-- Prism JavaScript -->
-    <!-- {{{script-ext 'prism/prism.js' true}}} -->
+    {{{script-ext 'prism/prism.js' true}}}
     <!-- Polyfill for Details element -->
-    <!-- {{{script-ext 'Element.details/__COMPILE/Element.details.js' true}}} -->
+    {{{script-ext 'Element.details/__COMPILE/Element.details.js' true}}}
+    {{/if}}
     {{{script-ext 'jquery/jquery.min.js' true}}}
+    {{{script-ext 'jRespond/js/jRespond.min.js' true}}}
     {{{script-ext 'jPanelMenu/jquery.jpanelmenu.min.js' true}}}
-    {{{script-ext 'FlexSlider/jquery.flexslider-min.js' true}}}
+    {{{script-ext 'nav.js' }}}
     {{{script-ext 'main.js' }}}
 
   {{#if options.development}}
+    {{{script-ext 'responsive-indicator/dist/responsive-indicator.min.js' true}}}
     <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':{{options.lrport}}/livereload.js?snipver=1"></' + 'script>')
     </script>
+    {{#if options.remoteDebug}}
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':{{options.wnport}}/target/target-script-min.js"></' + 'script>')
+    </script>
+    {{/if}}
   {{/if}}
   </body>
 </html>

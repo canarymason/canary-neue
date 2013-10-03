@@ -4,71 +4,70 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>Component Guide | Canary Promotion Style Prototype</title>
+    <title>Component Guide | canary2 Style Prototype</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <!-- Prototype CSS -->
     <link rel="stylesheet" href="/canary-neue/css/prototype.css">
-    <link rel="stylesheet" href="/canary-neue/css/style.css">
+    
     <!-- Prism CSS -->
-    <!-- <link rel="stylesheet" href="/canary-neue/components/prism/prism-okaidia.css"> -->
+    <link rel="stylesheet" href="/canary-neue/bower_components/prism/prism-okaidia.css">
+    
 
     <!-- Async Webfonts -->
     
 
 
-    <!-- H&FJ -->
+
+<!-- H&FJ -->
 <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6578432/747402/css/fonts.css" />
-<!-- FONTS.COM -->
-<!-- <script type="text/javascript" src="http://fast.fonts.com/jsapi/1b0176d5-5606-4880-8de1-7b5b7419b28a.js"></script> -->
 
 
     <!-- Modernizr stays in the head -->
-    <script src="/canary-neue/components/modernizr/modernizr.js"></script>
+    <script src="/canary-neue/bower_components/modernizr/modernizr.js"></script>
   </head>
 
   <body>
     <div id="prototype-header">
       <div class="content-wrapper">
         <header>
-  <div id="client-id">
-    
-      <h1 class="client-name">Canary Promotion</h1>
-    
-  </div>
-  <aside id="page-id">
-    <h2 class="section-name">Component Guide</h2>
-    <div class="page-info">
-      <p>Canary Promotion Style Prototype</p>
-      <p>Version 0.0.0</p>
+  <div class="inner-wrapper">
+    <div id="client-id">
+      
+        <h1 class="client-name">canary2</h1>
+      
     </div>
-  </aside>
-</header>
+    <aside id="page-id">
+      <h2 class="section-name">Component Guide</h2>
+      <div class="page-info">
+        <p>Version 0.0.0</p>
       </div>
-    </div>
-
-    <div id="prototype-nav">
-      <div class="content-wrapper">
-        <nav role="navigation">
-  <div role="menubar">
-    
-    <a href="/" role="menuitem">Home</a>
-    
-    <a href="/style-tile" role="menuitem">Style Tile</a>
-    
-    <a href="/elements" role="menuitem">Elements</a>
-    
-    <a href="/typography" role="menuitem">Typography</a>
-    
-    <a href="/components" role="menuitem">Components</a>
-    
-    <a href="/colors" role="menuitem">Colors</a>
-    
-    <a href="/canary" role="menuitem">Canary</a>
-    
+    </aside>
   </div>
-</nav>
+  <nav id="prototype-nav" role="navigation">
+    <b id="menu-toggle">menu</b>
+    <div role="menubar">
+      
+      <a href="/" role="menuitem">Style Tile</a>
+      
+      <a href="/elements" role="menuitem">Elements</a>
+      
+      <a href="/typography" role="menuitem">Typography</a>
+      
+      <a href="/components" role="menuitem">Components</a>
+      
+      <a href="/colors" role="menuitem">Colors</a>
+      
+      <a href="/canary" role="menuitem">Canary</a>
+      
+    </div>
+  </nav>
+  <script type="text/javascript">
+    (function(){var e=document.getElementById("menu-toggle");e.addEventListener("click",function(){e.classList.toggle("open")})})()
+  </script>
+</header>
+
       </div>
     </div>
 
@@ -76,115 +75,113 @@
       <div class="content-wrapper">
         
 
-<article class="messaging">
+<article class="prototype--messaging">
   <header>
     <h2>Messages</h2>
   </header>
-  <div class="messages group">
+  <div class="prototype-group--message">
   <ul component-list>
-  
-    <li>
-      <div class="messages status">
-        <h2 class="element-invisisble">status message</h2>
-        <p>This is a <em>status</em> message.</p>
-      </div>
-      
-      <details>
-        <summary>HTML Source</summary>
-        <pre class="example"><code class="language-markup">&lt;div class="messages status"&gt;
-  &lt;h2 class="element-invisisble"&gt;status message&lt;/h2&gt;
-  &lt;p>This is a &lt;em&gt;status&lt;/em&gt; message.&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-</details>
-      
-    </li>
-  
-    <li>
-      <div class="messages warning">
-        <h2 class="element-invisisble">warning message</h2>
-        <p>This is a <em>warning</em> message.</p>
-      </div>
-      
-      <details>
-        <summary>HTML Source</summary>
-        <pre class="example"><code class="language-markup">&lt;div class="messages warning"&gt;
-  &lt;h2 class="element-invisisble"&gt;warning message&lt;/h2&gt;
-  &lt;p>This is a &lt;em&gt;warning&lt;/em&gt; message.&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-</details>
-      
-    </li>
-  
-    <li>
-      <div class="messages error">
-        <h2 class="element-invisisble">error message</h2>
-        <p>This is a <em>error</em> message.</p>
-      </div>
-      
-      <details>
-        <summary>HTML Source</summary>
-        <pre class="example"><code class="language-markup">&lt;div class="messages error"&gt;
-  &lt;h2 class="element-invisisble"&gt;error message&lt;/h2&gt;
-  &lt;p>This is a &lt;em&gt;error&lt;/em&gt; message.&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-</details>
-      
-    </li>
-  
+    
+      <li>
+        <div class="message status">
+  <h2 class="element-invisible">status message</h2>
+  <p>This is a <em>status</em> message</p>
 </div>
-</article>
 
-<article class="buttons">
-  <header>
-    <h2>Buttons</h2>
-  </header>
-  <div class="buttons group">
-  <ul component-list>
-    
-      
-      <li>
-        <a class="call-to-action" href="#">Call to Action</a>
         
-        <details>
-          <summary>HTML Source</summary>
-          <pre class="example"><code class="language-markup">&lt;a class="call-to-action" href="#"&gt;Call to Action&lt;/a&gt;</code></pre>
-        </details>
-
+          <details>
+  <summary>HTML Source</summary>
+  <pre class="example"><code class="language-markup">&lt;div class="message status"&gt;
+  &lt;h2 class="element-invisible"&gt;status message&lt;/h2&gt;
+  &lt;p&gt;This is a &lt;em&gt;status&lt;/em&gt; message&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</details>
         
       </li>
-      
     
-      
       <li>
-        <a class="big-button" href="#">Big Button</a>
-        
-        <details>
-          <summary>HTML Source</summary>
-          <pre class="example"><code class="language-markup">&lt;a class="big-button" href="#"&gt;Big Button&lt;/a&gt;</code></pre>
-        </details>
+        <div class="message warning">
+  <h2 class="element-invisible">warning message</h2>
+  <p>This is a <em>warning</em> message</p>
+</div>
 
         
-      </li>
-      
-    
-      
-      <li>
-        <a class="big-button red" href="#">Warning Button</a>
+          <details>
+  <summary>HTML Source</summary>
+  <pre class="example"><code class="language-markup">&lt;div class="message warning"&gt;
+  &lt;h2 class="element-invisible"&gt;warning message&lt;/h2&gt;
+  &lt;p&gt;This is a &lt;em&gt;warning&lt;/em&gt; message&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</details>
         
-        <details>
-          <summary>HTML Source</summary>
-          <pre class="example"><code class="language-markup">&lt;a class="big-button red" href="#"&gt;Warning Button&lt;/a&gt;</code></pre>
-        </details>
+      </li>
+    
+      <li>
+        <div class="message error">
+  <h2 class="element-invisible">error message</h2>
+  <p>This is a <em>error</em> message</p>
+</div>
 
         
+          <details>
+  <summary>HTML Source</summary>
+  <pre class="example"><code class="language-markup">&lt;div class="message error"&gt;
+  &lt;h2 class="element-invisible"&gt;error message&lt;/h2&gt;
+  &lt;p&gt;This is a &lt;em&gt;error&lt;/em&gt; message&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</details>
+        
       </li>
-      
     
   </ul>
 </div>
 </article>
 
-<article class="pagers">
+<article class="prototype--buttons">
+  <header>
+    <h2>Buttons</h2>
+  </header>
+  <div class="prototype-group--button">
+  <ul component-list>
+    
+      <li>
+        <a class="button call-to-action" href="#">Call to Action</a>
+
+        
+          <details>
+  <summary>HTML Source</summary>
+  <pre class="example"><code class="language-markup">&lt;a class="button call-to-action" href="#"&gt;Call to Action&lt;/a&gt;</code></pre>
+</details>
+        
+      </li>
+    
+      <li>
+        <a class="button big-button" href="#">Big Button</a>
+
+        
+          <details>
+  <summary>HTML Source</summary>
+  <pre class="example"><code class="language-markup">&lt;a class="button big-button" href="#"&gt;Big Button&lt;/a&gt;</code></pre>
+</details>
+        
+      </li>
+    
+      <li>
+        <a class="button big-button warning" href="#">Warning Button</a>
+
+        
+          <details>
+  <summary>HTML Source</summary>
+  <pre class="example"><code class="language-markup">&lt;a class="button big-button warning" href="#"&gt;Warning Button&lt;/a&gt;</code></pre>
+</details>
+        
+      </li>
+    
+  </ul>
+</div>
+</article>
+
+<article class="prototype--pagers">
   <header>
     <h2>Pagers</h2>
   </header>
@@ -246,10 +243,12 @@
     </main>
 
     <!-- JavaScript goes in the footer! -->
+    
     <!-- Prism JavaScript -->
-    <script src="/canary-neue/components/prism/prism.js"></script>
+    <script src="/canary-neue/bower_components/prism/prism.js"></script>
     <!-- Polyfill for Details element -->
-    <script src="/canary-neue/components/Element.details/__COMPILE/Element.details.js"></script>
+    <script src="/canary-neue/bower_components/Element.details/__COMPILE/Element.details.js"></script>
+    
 
   
   </body>

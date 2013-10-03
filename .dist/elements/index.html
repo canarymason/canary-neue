@@ -4,71 +4,67 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>Element Guide | Canary Promotion Style Prototype</title>
+    <title>Element Guide | canary2 Style Prototype</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <!-- Prototype CSS -->
     <link rel="stylesheet" href="/canary-neue/css/prototype.css">
-    <link rel="stylesheet" href="/canary-neue/css/style.css">
-    <!-- Prism CSS -->
-    <!-- <link rel="stylesheet" href="/canary-neue/components/prism/prism-okaidia.css"> -->
+    
 
     <!-- Async Webfonts -->
     
 
 
-    <!-- H&FJ -->
+
+<!-- H&FJ -->
 <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6578432/747402/css/fonts.css" />
-<!-- FONTS.COM -->
-<!-- <script type="text/javascript" src="http://fast.fonts.com/jsapi/1b0176d5-5606-4880-8de1-7b5b7419b28a.js"></script> -->
 
 
     <!-- Modernizr stays in the head -->
-    <script src="/canary-neue/components/modernizr/modernizr.js"></script>
+    <script src="/canary-neue/bower_components/modernizr/modernizr.js"></script>
   </head>
 
   <body>
     <div id="prototype-header">
       <div class="content-wrapper">
         <header>
-  <div id="client-id">
-    
-      <h1 class="client-name">Canary Promotion</h1>
-    
-  </div>
-  <aside id="page-id">
-    <h2 class="section-name">Element Guide</h2>
-    <div class="page-info">
-      <p>Canary Promotion Style Prototype</p>
-      <p>Version 0.0.0</p>
+  <div class="inner-wrapper">
+    <div id="client-id">
+      
+        <h1 class="client-name">canary2</h1>
+      
     </div>
-  </aside>
-</header>
+    <aside id="page-id">
+      <h2 class="section-name">Element Guide</h2>
+      <div class="page-info">
+        <p>Version 0.0.0</p>
       </div>
-    </div>
-
-    <div id="prototype-nav">
-      <div class="content-wrapper">
-        <nav role="navigation">
-  <div role="menubar">
-    
-    <a href="/" role="menuitem">Home</a>
-    
-    <a href="/style-tile" role="menuitem">Style Tile</a>
-    
-    <a href="/elements" role="menuitem">Elements</a>
-    
-    <a href="/typography" role="menuitem">Typography</a>
-    
-    <a href="/components" role="menuitem">Components</a>
-    
-    <a href="/colors" role="menuitem">Colors</a>
-    
-    <a href="/canary" role="menuitem">Canary</a>
-    
+    </aside>
   </div>
-</nav>
+  <nav id="prototype-nav" role="navigation">
+    <b id="menu-toggle">menu</b>
+    <div role="menubar">
+      
+      <a href="/" role="menuitem">Style Tile</a>
+      
+      <a href="/elements" role="menuitem">Elements</a>
+      
+      <a href="/typography" role="menuitem">Typography</a>
+      
+      <a href="/components" role="menuitem">Components</a>
+      
+      <a href="/colors" role="menuitem">Colors</a>
+      
+      <a href="/canary" role="menuitem">Canary</a>
+      
+    </div>
+  </nav>
+  <script type="text/javascript">
+    (function(){var e=document.getElementById("menu-toggle");e.addEventListener("click",function(){e.classList.toggle("open")})})()
+  </script>
+</header>
+
       </div>
     </div>
 
@@ -383,10 +379,7 @@
     </main>
 
     <!-- JavaScript goes in the footer! -->
-    <!-- Prism JavaScript -->
-    <script src="/canary-neue/components/prism/prism.js"></script>
-    <!-- Polyfill for Details element -->
-    <script src="/canary-neue/components/Element.details/__COMPILE/Element.details.js"></script>
+    
 
   
   </body>

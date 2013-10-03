@@ -6,17 +6,17 @@
 
     <title>{{page-title}}</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <!-- Prototype CSS -->
     {{{style-ext 'prototype.css'}}}
-    {{{style-ext 'style.css'}}}
+    {{#if page.examples}}
     <!-- Prism CSS -->
-    <!-- {{{style-ext 'prism/prism-okaidia.css' true}}} -->
+    {{{style-ext 'prism/prism-okaidia.css' true}}}
+    {{/if}}
 
     <!-- Async Webfonts -->
     {{> prototype-webfonts}}
-    {{> canary-webfonts}}
 
     <!-- Modernizr stays in the head -->
     {{{script-ext 'modernizr/modernizr.js' true}}}
@@ -29,12 +29,6 @@
       </div>
     </div>
 
-    <div id="prototype-nav">
-      <div class="content-wrapper">
-        {{> prototype-nav}}
-      </div>
-    </div>
-
     <main>
       <div class="content-wrapper">
         {{{body}}}
@@ -42,14 +36,21 @@
     </main>
 
     <!-- JavaScript goes in the footer! -->
+    {{#if page.examples}}
     <!-- Prism JavaScript -->
     {{{script-ext 'prism/prism.js' true}}}
     <!-- Polyfill for Details element -->
     {{{script-ext 'Element.details/__COMPILE/Element.details.js' true}}}
+    {{/if}}
 
   {{#if options.development}}
+    {{{script-ext 'responsive-indicator/dist/responsive-indicator.min.js' true}}}
     <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':{{options.lrport}}/livereload.js?snipver=1"></' + 'script>')
     </script>
+    {{#if options.remoteDebug}}
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':{{options.wnport}}/target/target-script-min.js"></' + 'script>')
+    </script>
+    {{/if}}
   {{/if}}
   </body>
 </html>

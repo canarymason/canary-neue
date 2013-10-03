@@ -1,0 +1,39 @@
+@mixin readable-text($color) {
+  @if cs-is-dark($color) {
+    color: $cs-text-light;
+  }
+  @else {
+    color: $cs-text-dark;
+  }
+}
+
+//////////////////////////////
+// Keyframe Animation for the Logo
+@mixin animate($name) {
+  @-webkit-keyframes #{$name} { @content; }
+  @-moz-keyframes #{$name} { @content; }
+}
+//////////////////////////////
+
+//////////////////////////////
+// calculate pixels
+@function px($value, $px: 16) {
+  @return (($value * $px) / 1em) * 1px;
+}
+//////////////////////////////
+
+//////////////////////////////
+// calculate ems
+@function em($value, $context: $base-font-size) {
+  @if unit($value) == '' {
+    $value: $value * 1em;
+  }
+  @if unit($value) != px {
+    $value: px($value);
+  }
+  @if unit($context) != px {
+    $context: px($context);
+  }
+  @return ($value / $context) * 1em;
+}
+//////////////////////////////

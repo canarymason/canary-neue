@@ -1,15 +1,17 @@
 {
-  "name": "canary-promotion-styleguide",
+  "name": "canary2-styleguide",
   "version": "0.0.0",
   "dependencies": {
     "formalize": "git://github.com/nathansmith/formalize",
     "modernizr": "~2.6.2",
     "jquery": "~2.0.0",
-    "prism": "latest",
+    "prism": "gh-pages",
     "Element.details": "termi/Element.details",
     "jPanelMenu": "acolangelo/jPanelMenu#~1.2.0",
     "jRespond": "ten1seven/jRespond",
     "FlexSlider": "woothemes/FlexSlider"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "responsive-indicator": "~0.1.3"
+  }
 }
