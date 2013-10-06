@@ -1,6 +1,6 @@
 {
-  "name": "canary2-styleguide",
-  "version": "1.0.0",
+  "name": "canary3-styleguide",
+  "version": "1.1.0",
   "dependencies": {
     "formalize": "git://github.com/nathansmith/formalize",
     "modernizr": "~2.6.2",
@@ -8,8 +8,7 @@
     "prism": "gh-pages",
     "Element.details": "termi/Element.details",
     "jPanelMenu": "acolangelo/jPanelMenu#~1.2.0",
-    "jRespond": "ten1seven/jRespond",
-    "FlexSlider": "woothemes/FlexSlider"
+    "jRespond": "ten1seven/jRespond"
   },
   "devDependencies": {
     "responsive-indicator": "~0.1.3"

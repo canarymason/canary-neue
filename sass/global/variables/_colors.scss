@@ -29,14 +29,14 @@ $black-tints             : tint-stack($black);
 // $tertiary-shades         : shade-stack(cs-tertiary());
 // $quaternary-tints        : tint-stack(cs-quadrary());
 // $quaternary-shades       : shade-staßck(cs-quadrary());
-$primary-tints           : tint-stack(cs-primary());
-$primary-shades          : shade-stack(cs-primary());
-$secondary-tints         : tint-stack(cs-secondary());
-$secondary-shades        : shade-stack(cs-secondary());
-$tertiary-tints          : tint-stack(cs-tertiary());
-$tertiary-shades         : shade-stack(cs-tertiary());
-$quaternary-tints        : tint-stack(cs-quadrary());
-$quaternary-shades       : shade-stack(cs-quadrary());
+// $primary-tints           : tint-stack(cs-primary());
+// $primary-shades          : shade-stack(cs-primary());
+// $secondary-tints         : tint-stack(cs-secondary());
+// $secondary-shades        : shade-stack(cs-secondary());
+// $tertiary-tints          : tint-stack(cs-tertiary());
+// $tertiary-shades         : shade-stack(cs-tertiary());
+// $quaternary-tints        : tint-stack(cs-quadrary());
+// $quaternary-shades       : shade-stack(cs-quadrary());
 
 $cs-secondary: cs-secondary();
 
@@ -102,12 +102,12 @@ $orange-thin: rgba($orange-thin, 0.3);
 // Color Scheme Colors
 $primary-tints           : tint-stack($orange);
 $primary-shades          : shade-stack($orange);
-$secondary-tints         : tint-stack($blue);
-$secondary-shades        : shade-stack($blue);
-$tertiary-tints          : tint-stack(cs-tertiary());
-$tertiary-shades         : shade-stack(cs-tertiary());
-$quaternary-tints        : tint-stack(cs-quadrary());
-$quaternary-shades       : shade-stack(cs-quadrary());
+$secondary-tints         : tint-stack($blue-slate);
+$secondary-shades        : shade-stack($blue-slate);
+$tertiary-tints          : tint-stack($blue);
+$tertiary-shades         : shade-stack($blue);
+$quaternary-tints        : tint-stack(cs-tertiary());
+$quaternary-shades       : shade-stack(cs-tertiary());
 //////////////////////////////
 
 

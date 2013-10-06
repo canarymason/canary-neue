@@ -1,0 +1,18 @@
+<div class="prototype-group--heading">
+
+  {{#if page.examples}}
+    {{{create-example-sass "heading" all true}}}
+  {{/if}}
+  <ul component-list>
+    {{#each options.grunt.userConfig.components.heading}}
+      <li>
+        {{{component "heading" this}}}
+
+        {{#if ../page.examples}}
+          {{{create-example-html "heading" ../this}}}
+          {{{create-example-sass "heading" ../this}}}
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>

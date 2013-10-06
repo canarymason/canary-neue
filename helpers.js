@@ -12,19 +12,38 @@ marked.setOptions({
 
 module.exports = {
   'image-url': function(src) {
-    return this.options.assets + '/' + this.options.userConfig.assets.imagesDir + '/' + src;
+    var path = this.options.assets;
+    if (path === '/') {
+      path = '';
+    }
+    return path + '/' + this.options.userConfig.assets.imagesDir + '/' + src;
   },
   'script-url': function(src) {
-    return this.options.assets + '/' + this.options.userConfig.assets.jsDir + '/' + src;
+    var path = this.options.assets;
+    if (path === '/') {
+      path = '';
+    }
+    return path + '/' + this.options.userConfig.assets.jsDir + '/' + src;
   },
   'style-url': function(href) {
-    return this.options.assets + '/' + this.options.userConfig.assets.cssDir + '/' + href;
+    var path = this.options.assets;
+    if (path === '/') {
+      path = '';
+    }
+    return path + '/' + this.options.userConfig.assets.cssDir + '/' + href;
   },
   'component-url': function(src) {
-    return this.options.assets + '/' + this.options.userConfig.assets.componentsDir + '/' + src;
+    var path = this.options.assets;
+    if (path === '/') {
+      path = '';
+    }
+    return path + '/' + this.options.userConfig.assets.componentsDir + '/' + src;
   },
   'style-ext': function(href, component) {
     var path = this.options.assets;
+    if (path === '/') {
+      path = '';
+    }
 
     if (component.data === undefined) {
       path += '/' + this.options.userConfig.assets.componentsDir + '/';
@@ -37,6 +56,9 @@ module.exports = {
   },
   'script-ext': function(src, component) {
     var path = this.options.assets;
+    if (path === '/') {
+      path = '';
+    }
 
     if (component.data === undefined) {
       path += '/' + this.options.userConfig.assets.componentsDir + '/';
@@ -87,14 +109,14 @@ module.exports = {
 
     return output;
   },
-  'create-example-html': function(type, component) {
-    var name = component;
-    if (typeof(component) === 'object') {
-      name = Object.keys(component)[0];
+  'create-example-html': function(component, type) {
+    var name = type;
+    if (typeof(type) === 'object') {
+      name = Object.keys(type)[0];
     }
     name = _s.slugify(name);
 
-    var path = 'partials/components/' + type + '/' + type + '--' + name + '.html';
+    var path = 'partials/components/' + component + '/' + component + '--' + name + '.html';
     var code = fs.readFileSync('templates/code.html').toString('utf-8');
     code = code.replace('{{summary}}', 'HTML Source');
     code = code.replace('{{language}}', 'markup');
@@ -107,15 +129,87 @@ module.exports = {
 
     return code;
   },
-  'component': function(type, component) {
-
-    var name = component;
-    if (typeof(component) === 'object') {
-      name = Object.keys(component)[0];
+  'create-example-sass': function(component, type, support) {
+    var name = type;
+    if (typeof(type) === 'object') {
+      name = Object.keys(type)[0];
     }
     name = _s.slugify(name);
 
-    var path = 'partials/components/' + type + '/' + type + '--' + name + '.html';
+    if (typeof(support) === 'object') {
+      support = false;
+    }
+
+    if (support) {
+      var mixins = 'sass/components/' + component + '/_mixins.scss';
+      var extend = 'sass/components/' + component + '/_extends.scss';
+
+      var mixinFile = '';
+      var extendFile = '';
+
+      var code = fs.readFileSync('templates/code.html').toString('utf-8');
+
+      var mixinCode = '';
+      var extendCode = '';
+
+      if (fs.existsSync(mixins)) {
+        mixinFile = fs.readFileSync(mixins).toString('utf-8') + '\n';
+
+        mixinCode = code.replace('{{summary}}', 'Sass Mixin Source');
+        mixinCode = mixinCode.replace('{{language}}', 'scss');
+        mixinCode = mixinCode.replace('{{code}}', mixinFile);
+      }
+      if (fs.existsSync(extend)) {
+        extendFile = fs.readFileSync(extend).toString('utf-8');
+
+        extendCode = code.replace('{{summary}}', 'Sass Extend Source');
+        extendCode = extendCode.replace('{{language}}', 'scss');
+        extendCode = extendCode.replace('{{code}}', extendFile);
+      }
+
+      return mixinCode + extendCode;
+    }
+    else {
+      var path = 'sass/components/_' + component + '.scss';
+
+      var code = fs.readFileSync('templates/code.html').toString('utf-8');
+      code = code.replace('{{summary}}', 'Sass Source');
+      code = code.replace('{{language}}', 'scss');
+
+      var file = fs.readFileSync(path).toString('utf-8');
+
+      var startType = '// @{' + component + '}';
+      var endType = '// {' + component + '}@';
+      var typeFindLength = startType.length;
+      var indexStartType = file.indexOf(startType) >= 0 ? file.indexOf(startType) + typeFindLength + 1 : false;
+      var indexEndType = file.indexOf(endType) >= 0 ? file.indexOf(endType) : false;
+
+      var startComp = '// @{' + component + '--' + name + '}';
+      var endComp = '// {' + component + '--' + name + '}@';
+      var compFindLength = startComp.length;
+      var indexStartComp = file.indexOf(startComp) >= 0 ? file.indexOf(startComp) + compFindLength + 1 : false;
+      var indexEndComp = file.indexOf(endComp) >= 0 ? file.indexOf(endComp) : false;
+
+      var typeSass = indexStartType && indexEndType ? file.slice(indexStartType, indexEndType) + '\n' : '';
+
+      var compSass = indexStartComp && indexEndComp ? file.slice(indexStartComp, indexEndComp) : '';
+
+      var fullSass = typeSass + compSass;
+
+      code = code.replace('{{code}}', fullSass);
+
+      return code;
+    }
+  },
+  'component': function(component, type) {
+
+    var name = type;
+    if (typeof(type) === 'object') {
+      name = Object.keys(type)[0];
+    }
+    name = _s.slugify(name);
+
+    var path = 'partials/components/' + component + '/' + _s.slugify(component) + '--' + name + '.html';
 
     var file = fs.readFileSync(path).toString('utf-8');
 

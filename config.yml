@@ -9,7 +9,7 @@ client:
 ## Author Information
 #########################
 author:
-  name: Mason
+  name: Mason Wendell
   email: mason@thecodingdesigner.com
 
 #########################
@@ -30,24 +30,24 @@ prototype:
 ## Main Navigation Sections
 sections:
   Style Tile: ''
+  Content Strategy: content
   Elements: elements
-  Typography: typography
   Components: components
   Colors: colors
-  Canary: canary
+  Home: canary
 
 ## Style Tile Options
 styleTile:
   # Number of possible colors
-  colors: 3
+  colors: 4
   # Source links to inspirational images
   # Either relative paths from your images directory, or absolute paths to external images
   images:
-    - patterns/moon.jpg
-    - patterns/ice.jpg
-    - patterns/iceberg.jpg
-    - patterns/clouds.jpg
-    - http://lorempixel.com/output/abstract-q-c-640-480-1.jpg
+    - feathers/stock-photo-18775464-white-wing.jpg
+    - feathers/tar_by_baspunk-d5duokj.jpg
+    - feathers/4592706493_8d7119dd95_o.jpg
+    - feathers/Feathers_Texture_by_armene_stock.jpg
+    - feathers/stock-photo-close-up-of-blue-macaw-feathers-138263024.jpg
   # Descriptive keywords for Style Tile
   keywords:
     - Default
@@ -59,10 +59,28 @@ styleTile:
 ## Component Guide
 #########################
 components:
+  header:
+    - site_header
+  menu:
+    - site-menu
+  feature:
+    - hero
+  title:
+    - section
+  teaser:
+    - blog
+    - testimonial
+  headline:
+    - press
   message:
     - status
     - warning
     - error
+  social-link:
+    - facebook
+    - twitter
+    - flickr
+    - foursquare
   button:
     - Call to Action:
         classes:
@@ -74,6 +92,36 @@ components:
         classes:
           - big-button
           - warning
+  baseline:
+    - baseline
+  bird-feed:
+    - teasers
+  heading-custom:
+    - base
+  blockquote:
+    - quote
+    - footer
+  border:
+    - bottom-dashed
+    - right-blue
+  icon:
+    - list
+    - button
+  list:
+    - inline
+    - no-bullets
+  speech-bubble:
+    - base
+  footer:
+    - site
+  header:
+    - site
+  nav:
+    - site
+  press:
+    - headlines
+  testimonials:
+    - teasers
 
 #########################
 ## Color Guide
@@ -81,11 +129,15 @@ components:
 colors:
   # Variable names of the color variables being used
   variables:
-    - black
-    - primary-tint
-    - primary-shade
-    - secondary-tint
-    - secondary-shade
+    - black-tints
+    - primary-tints
+    - primary-shades
+    - secondary-tints
+    - secondary-shades
+    - tertiary-tints
+    - tertiary-shades
+    - quaternary-tints
+    - quaternary-shades
   # The number of shades each color has
   shades: 6
 
@@ -93,7 +145,7 @@ colors:
 ## Server Options
 #########################
 server:
-  port: 7000
+  port: 8000
   # If remoteAccess is set to true, you will be able to access your prototype from any device connected to the same network as well as be able to remotely debug them.
   remoteAccess: false
 
@@ -102,8 +154,8 @@ server:
 #########################
 export:
   path: export
-  # If deploying somewhere (like GitHub Pages) where your files will not be located at the root directory, this will be the prefix that gets appended to assets run through image-url, style-url, script-url, and component-url
-  assetPrefix: canary-neue
+  # If deploying somewhere (like GitHub Pages) where your files will not be located at the root directory, this will be the prefix that gets appended to assets run through image-url, style-url, script-url, and component-url. If they will be deployed to the root directory, set assetPrefix to ''
+  assetPrefix: page
 
 #########################
 ## Compass Options

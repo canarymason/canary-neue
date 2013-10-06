@@ -1,22 +1,23 @@
-////////////////////////////
-// Kit Default Variables
-////////////////////////////
+//////////////////////////////
+// Compass Extension Settings
+//////////////////////////////
 
-$space: "\0020";
+//////////////////////////////
+// Style Guide
+//
+// These settings, along with their paired element or selector settings, will result in either elements or selectors being included in output CSS or not
+//////////////////////////////
+$output-elements: true !default;
+$output-selectors: true !default;
 
 ////////////////////////////
-// Modular Scale (used by 04-base)
-// values used to determine modular scale values
-// and http://modularscale.com/
+// Modular Scale
+//
+// Values used to determine modular scale values
+// http://modularscale.com/
 $ratio: augmented_fourth();
 $base-size: 1em 2.75em;
 ////////////////////////////
-
-//////////////////////
-// Font size and line-height
-$base-font-size: nth($base-size, 1);
-$base-line-height: ($base-font-size * 1.625) / 1em;
-//////////////////////
 
 //////////////////////
 // Headings
@@ -33,8 +34,10 @@ $zi-menu: 1;
 $zi-content: 2;
 //////////////////////
 
-//////////////////////
-// BREAKPOINTS
+//////////////////////////////
+// Breakpoint
+//
+// Settings for Breakpoint
 $breakpoint-to-ems: true;
 $breakpoint-no-query-fallbacks: true;
 $bp-golden-2: 760px;
@@ -50,7 +53,7 @@ $bp-slider-overlay: 560px;
 $bp-nav: 780px;
 $bp-nav-big-logo: ($bp-nav) (min-height 1000px);
 $bp-slideshow-border: $bp-nav;
-//////////////////////
+//////////////////////////////
 
 //////////////////////
 // SINGULARITY GRIDS
@@ -72,3 +75,5 @@ $gutters: add-gutter(1/10 at $bp-golden-2);
 // @debug nth($grids, 2);
 // @debug nth($grids, 3);
 //////////////////////
+
+$space: "\0020";

@@ -1,9 +1,11 @@
 {
   "extension": {
     "sass": [
-      "_canary2-style-guide.scss",
+      "_canary3-style-guide.scss",
       "global/**/*",
-      "partials/**/*"
+      "elements/**/*",
+      "components/**/*",
+      "layouts/**/*"
     ],
     "images": [
       "**"

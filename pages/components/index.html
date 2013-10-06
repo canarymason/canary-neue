@@ -4,60 +4,83 @@
 }
 ---
 
-<article class="prototype--site-header">
+<article class="prototype--header--site-header">
   <header>
     <h2>Site Header</h2>
   </header>
-  {{> canary-header}}
+  {{#if page.examples}}
+    {{{create-example-sass "header" all true}}}
+  {{/if}}
+  {{> header--site-header}}
 </article>
 
-<article class="prototype--menu">
+<article class="prototype--menu--site-menu">
   <header>
     <h2>Site Menu</h2>
   </header>
-  {{> canary-menu}}
+  {{> prototype-group--menu}}
 </article>
 
-<article class="prototype--hero">
+<article class="prototype--feature--hero">
   <header>
     <h2>Hero</h2>
   </header>
-  {{> hero-slider}}
+  {{> feature--hero}}
 </article>
 
-<article class="prototype--section-title">
+<article class="prototype--title--section">
   <header>
-    <h2>Seaction Title</h2>
+    <h2>Titles</h2>
   </header>
-  {{> section-title}}
+  {{> prototype-group--title}}
 </article>
 
-<article class="prototype--blog-teasers">
+<article class="prototype--teaser">
   <header>
-    <h2>Blog Teaser</h2>
+    <h2>Blog Teasers</h2>
   </header>
-  {{> blog-teaser-1}}
+  {{> teaser--blog}}
+  <header>
+    <h2>Testimonial Teasers</h2>
+  </header>
+  {{> teaser--testimonial}}
 </article>
 
-<article class="prototype--press-headlines">
+<article class="prototype--headline--press">
   <header>
     <h2>Press Headlines</h2>
   </header>
-  {{> press-headlines}}
+  <ul>
+    <li>
+      {{> headline--press}}
+    </li>
+    <li>
+      {{> headline--press-2}}
+    </li>
+    <li>
+      {{> headline--press-3}}
+    </li>
+    <li>
+      {{> headline--press-4}}
+    </li>
+    <li>
+      {{> headline--press-5}}
+    </li>
+  </ul>
 </article>
 
-<article class="prototype--social-links">
+<article class="prototype--social-link">
   <header>
     <h2>Social Links</h2>
   </header>
-  {{> social-links}}
+  {{> prototype-group--social-link}}
 </article>
 
-<article class="prototype--testimonials-teasers">
+<article class="prototype--a11y">
   <header>
-    <h2>Testimonials Teaser</h2>
+    <h2>Accessibility</h2>
   </header>
-  {{> testimonial-teaser-1}}
+  {{> a11y}}
 </article>
 
 <article class="prototype--messaging">
@@ -78,12 +101,5 @@
   <header>
     <h2>Pagers</h2>
   </header>
-  {{> pagers}}
-</article>
-
-<article class="prototype--site-footer">
-  <header>
-    <h2>Site Footer</h2>
-  </header>
-  {{> canary-footer}}
+  {{> pager}}
 </article>

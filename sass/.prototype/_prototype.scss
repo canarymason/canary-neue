@@ -11,19 +11,17 @@ main {
   display: block;
 }
 
-#prototype-header  {
-  nav ul {
-    @include box-sizing('border-box');
-    @include breakpoint($sp-vertical-horizontal-nav) {
-      @include horizontal-list;
-    }
+nav ul {
+  @include box-sizing('border-box');
+  @include breakpoint($sp-vertical-horizontal-nav) {
+    @include horizontal-list;
   }
 }
 
-// body {
-//   margin: 0;
-//   padding: 0;
-// }
+body {
+  margin: 0;
+  padding: 0;
+}
 
 .content-wrapper {
   max-width: $sp-max-page-width;
@@ -62,6 +60,7 @@ $prototype-header-text-color: #161616;
     background: none;
     border: none;
     vertical-align: baseline;
+    color: $prototype-header-text-color;
     @include box-shadow(none);
     @include text-shadow(none);
   }
@@ -201,8 +200,8 @@ $prototype-header-text-color: #161616;
   list-style: none;
   padding: 0;
   margin: .25em .5em;
-  details {
-    margin: 0.5em 0 1em;
+  details:first-of-type {
+    margin-top: 1em;
   }
   li {
     margin: {

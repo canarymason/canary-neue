@@ -49,7 +49,7 @@ module.exports = function (grunt) {
     hostname = '*';
     remoteDebug = true;
   }
-  var remoteHost = os.hostname() + '.local';
+  var remoteHost = os.hostname();
 
   // Compass Configuration
   var debugInfo = userConfig.compass.debugInfo;
@@ -94,7 +94,8 @@ module.exports = function (grunt) {
           pagesDir + '/**/*.md',
           partialsDir + '/**/*.html',
           templatesDir + '/**/*.html',
-          '!' + templatesDir + '/components/**/*.html'
+          '!' + templatesDir + '/components/**/*.html',
+          helpers + '.js'
         ],
         tasks: ['generator:dev']
       },
@@ -383,7 +384,7 @@ module.exports = function (grunt) {
           process: true
         },
         files: {
-          '.compass/lib/canary2-style-guide.rb': ['.compass/.template/style-guide.rb']
+          '.compass/lib/canary3-style-guide.rb': ['.compass/.template/style-guide.rb']
         }
       },
       gemspec: {
@@ -391,7 +392,7 @@ module.exports = function (grunt) {
           process: true
         },
         files: {
-          '.compass/canary2-style-guide.gemspec': ['.compass/.template/style-guide.gemspec']
+          '.compass/canary3-style-guide.gemspec': ['.compass/.template/style-guide.gemspec']
         }
       }
     },
@@ -455,10 +456,10 @@ module.exports = function (grunt) {
         }
       },
       ext: {
-        cmd: 'cd .compass && bundle exec gem build canary2-style-guide.gemspec && mv canary2-style-guide-' + userConfig.client.version + '.gem ../canary2-style-guide-' + userConfig.client.version + '.gem && cd ..'
+        cmd: 'cd .compass && bundle exec gem build canary3-style-guide.gemspec && mv canary3-style-guide-' + userConfig.client.version + '.gem ../canary3-style-guide-' + userConfig.client.version + '.gem && cd ..'
       },
       install: {
-        cmd: 'gem install canary2-style-guide-' + userConfig.client.version + '.gem && rm canary2-style-guide-' + userConfig.client.version + '.gem'
+        cmd: 'gem install canary3-style-guide-' + userConfig.client.version + '.gem && rm canary3-style-guide-' + userConfig.client.version + '.gem'
       },
       weinre: {
         cmd: 'weinre --httpPort ' + wnport + ' --boundHost -all-'
@@ -558,6 +559,11 @@ module.exports = function (grunt) {
   grunt.registerTask('export', 'Exports your build', function() {
     var path = grunt.option('to') || exportPath;
 
+    if (grunt.file.exists(path)) {
+      grunt.file.delete(path, {force: true});
+      console.log('Folder `' + path + '` removed to ensure a clean build.');
+    }
+
     grunt.task.run('build', 'exec:export:' + path);
   });
 
@@ -655,23 +661,84 @@ module.exports = function (grunt) {
     // Loop over each item in components
     _.forEach(grunt.userConfig.components, function(v, e) {
       // Grab the template prefix for this component
-      var tmpl = e;
+      var tmpl = _s.slugify(e);
+      // Check to see if the template exists, and if not, create it
+      var tmplPath = 'templates/components/' + tmpl + '.html';
+      if (!grunt.file.exists(tmplPath)) {
+        var tmplContent = '<!-- Component: {{component.cap}},  Type: {{type.cap}} -->';
+        grunt.file.write(tmplPath, tmplContent);
+      }
       // Load the template from the templates directory
-      var template = grunt.file.read('templates/components/' + tmpl + '.html');
+      var template = grunt.file.read(tmplPath);
       // Create Holder Partial
-      var partial = '<div class="prototype-group--' + _s.slugify(tmpl) + '">' +
+      var partial = '<div class="prototype-group--' + tmpl + '">' +
+'\n\n  {{#if page.examples}}' +
+'\n    {{{create-example-sass "' + tmpl + '" all true}}}' +
+'\n  {{/if}}' +
 '\n  <ul component-list>' +
 '\n    {{#each options.grunt.userConfig.components.' + tmpl + '}}' +
 '\n      <li>' +
 '\n        {{{component "' + tmpl + '" this}}}' +
 '\n\n        {{#if ../page.examples}}' +
 '\n          {{{create-example-html "' + tmpl + '" ../this}}}' +
+'\n          {{{create-example-sass "' + tmpl + '" ../this}}}' +
 '\n        {{/if}}' +
 '\n      </li>' +
 '\n    {{/each}}' +
 '\n  </ul>' +
 '\n</div>';
       grunt.file.write('partials/components/prototype-group--' + tmpl + '.html', partial);
+
+      var basePath = 'sass/components/_' + tmpl + '.scss';
+      var mixinPath = 'sass/components/' + tmpl + '/_mixins.scss';
+      var extendsPath = 'sass/components/' + tmpl + '/_extends.scss';
+
+      var supportHeader = '//////////////////////////////' +
+'\n// ' + _s.capitalize(e) + ' Component {{type}}' +
+'\n//////////////////////////////';
+      var basePartial = '//////////////////////////////' +
+'\n// ' + _s.capitalize(e) + ' Component' +
+'\n//' +
+'\n// The partial and folder structure for this component should be as follows:' +
+'\n// _' + tmpl + '.scss' +
+'\n// ' + tmpl + ' (folder)' +
+'\n//   _mixins.scss' +
+'\n//   _extends.scss' +
+'\n//' +
+'\n// Automatic Sass parsing is done through special comment blocks' +
+'\n//  - Start styling block for base component: @{component}' +
+'\n//  - End styling block for base component:   {component}@' +
+'\n//' +
+'\n//  - Start styling block for specific component configuration: @{component--configuration}' +
+'\n//  - End styling block for specific component configuration:   {component--configuration}@' +
+'\n//////////////////////////////\n' +
+'\n@import "' + tmpl + '/mixins";' +
+'\n@import "' + tmpl + '/extends";' +
+'\n\n//////////////////////////////' +
+'\n// Having $output-selectors and $output-selectors--' + tmpl + ' set to `true` will output the CSS selectors for ' + _s.capitalize(e) + 'Component' +
+'\n$output-selectors--' + tmpl + ': true !default;' +
+'\n@if $output-selectors and $output-selectors--' + tmpl + ' {' +
+'\n//////////////////////////////' +
+'\n\n//////////////////////////////' +
+'\n// @{' + tmpl + '}' +
+'\n// Styling for ' + _s.capitalize(e) + ' Component' +
+'\n\n// {' + tmpl + '}@' +
+'\n//////////////////////////////\n\n';
+
+      if (!grunt.file.exists(mixinPath)) {
+        grunt.file.write(mixinPath, supportHeader.replace('{{type}}', 'Mixins'));
+      }
+      if (!grunt.file.exists(extendsPath)) {
+        var extend = supportHeader.replace('{{type}}', 'Extendable Classes');
+        extend += '\n\n' +
+'$' + tmpl + '-extendables-extended: false !default;' +
+'\n\n@if not ($' + tmpl + '-extendables-extended) {' +
+'\n  // Replace this line with extendable calsses' +
+'\n}' +
+'\n\n$' + tmpl + '-extendables-extended: true;';
+        grunt.file.write(extendsPath, extend);
+      }
+
       // Loop over each version of the component
       _.forEach(v, function(value, name) {
         var singleton = true;
@@ -685,13 +752,22 @@ module.exports = function (grunt) {
           name = Object.keys(name)[0];
           value = value[name];
         }
-        // Replace {{name}} with the name of the component
-        var component = template.replace(new RegExp('{{name}}', 'g'), name);
-        component = component.replace(new RegExp('{{name.slug}}', 'g'), _s.slugify(name));
+        // Replace {{type}} with the name of the specific component
+        var component = template.replace(new RegExp('{{type}}', 'g'), name);
+        component = component.replace(new RegExp('{{type.slug}}', 'g'), _s.slugify(name));
+        component = component.replace(new RegExp('{{type.cap}}', 'g'), _s.capitalize(name));
 
-        // Replace {{type}} with the type of component
-        component = component.replace(new RegExp('{{type}}', 'g'), tmpl);
-        component = component.replace(new RegExp('{{type.slug}}', 'g'), _s.slugify(tmpl));
+        // Replace {{component}} with the name of the general component
+        component = component.replace(new RegExp('{{component}}', 'g'), e);
+        component = component.replace(new RegExp('{{component.slug}}', 'g'), _s.slugify(tmpl));
+        component = component.replace(new RegExp('{{component.cap}}', 'g'), _s.capitalize(tmpl));
+
+        // Create comment for base partial if it the partial doesn't exist
+        basePartial += '\n//////////////////////////////' +
+'\n// @{' + tmpl + '--' + _s.slugify(name) + '}' +
+'\n// ' + _s.capitalize(name) + ' styling for ' + _s.capitalize(e) + ' Component' +
+'\n\n// {' + tmpl + '--' + _s.slugify(name) + '}@' +
+'\n//////////////////////////////\n\n';
 
         if (!singleton) {
           // Loop over each property of the component
@@ -709,13 +785,19 @@ module.exports = function (grunt) {
               }
             }
             // Replace each instance of the key in the template with the property
-            component = component.replace('{{' + k + '}}', p);
-            component = component.replace('{{' + k + '.slug}}', _s.slugify(p));
+            component = component.replace(new RegExp('{{' + k + '}}', 'g'), p);
+            component = component.replace(new RegExp('{{' + k + '.slug}}', 'g'), _s.slugify(p));
+            component = component.replace(new RegExp('{{' + k + '.cap}}', 'g'), _s.capitalize(p));
           });
         }
         // Write component to disk
         grunt.file.write('partials/components/' + tmpl + '/' + tmpl + '--' + _s.slugify(name) + '.html', component);
       });
+      // If the base partial doesn't exist, create it.
+      basePartial += '}';
+      if (!grunt.file.exists(basePath)) {
+        grunt.file.write(basePath, basePartial);
+      }
     });
   });
 };
