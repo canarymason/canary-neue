@@ -129,7 +129,6 @@ components:
 colors:
   # Variable names of the color variables being used
   variables:
-    - black-tints
     - primary-tints
     - primary-shades
     - secondary-tints
@@ -138,6 +137,8 @@ colors:
     - tertiary-shades
     - quaternary-tints
     - quaternary-shades
+    - black-tints
+    - white-shades
   # The number of shades each color has
   shades: 6
 

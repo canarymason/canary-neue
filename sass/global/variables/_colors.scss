@@ -20,57 +20,13 @@ $cs-brightness-offset:  10;
 $cs-color-model:        ryb;
 // Options: rgb, ryb
 
-$black-tints             : tint-stack($black);
-// $primary-tints           : tint-stack(cs-primary());
-// $primary-shades          : shade-stack(cs-primary());
-// $secondary-tints         : tint-stack(cs-secondary());
-// $secondary-shades        : shade-stack(cs-secondary());
-// $tertiary-tints          : tint-stack(cs-tertiary());
-// $tertiary-shades         : shade-stack(cs-tertiary());
-// $quaternary-tints        : tint-stack(cs-quadrary());
-// $quaternary-shades       : shade-staßck(cs-quadrary());
-// $primary-tints           : tint-stack(cs-primary());
-// $primary-shades          : shade-stack(cs-primary());
-// $secondary-tints         : tint-stack(cs-secondary());
-// $secondary-shades        : shade-stack(cs-secondary());
-// $tertiary-tints          : tint-stack(cs-tertiary());
-// $tertiary-shades         : shade-stack(cs-tertiary());
-// $quaternary-tints        : tint-stack(cs-quadrary());
-// $quaternary-shades       : shade-stack(cs-quadrary());
-
-$cs-secondary: cs-secondary();
 
 
 //////////////////////////////
 // Brand Colors
 $orange                  : $cs-primary;
-// $blue                    : nth($quaternary-tints, 1);
-// $gray-light              : nth($black-tints, 4);
-// $gray-med                : nth($black-tints, 3);
-// $gray-dark               : nth($black-tints, 2);
-// $gray-med-light          : adjust-color($gray-light, $lightness: 20%);
-// $gray-extra-light        : adjust-color($gray-light, $lightness: 30%);
-// $gray-darker             : adjust-color($gray-dark, $lightness: -10%);
-// $gray-lighter            : nth($black-tints, 5);
-// $warm-white              : nth($primary-tints, 6);
-// $cool-white              : nth($quaternary-tints, 6);
-// $white-trans             : rgba($white, 0.2);
-// $orange-dark             : nth($primary-shades, 2);
-// $orange-darker           : nth($primary-shades, 3);
-// $orange-chocolate        : nth($primary-shades, 4);
-// $orange-chocolate-light  : adjust-color($orange-chocolate, $lightness: 30%);
-// $orange-chocolate-dark   : adjust-color($orange-chocolate, $lightness: -5%);
-// $orange-light            : nth($primary-tints, 3);
-// $blue-dark               : nth($quaternary-shades, 2);
-// $gray-trans              : rgba($gray-light, 0.3);
-// $blue-light              : nth($quaternary-shades, 3);
-// $blue-slate              : #2B3542;
-// $blue-slate-mult         : blend-multiply(rgba($blue-slate, 0.2), $blue-slate);
-// $blue-dim                : adjust-color($blue, $saturation: -5%);
-// $orange-thin             : nth($primary-shades, 2);
-// $orange-thin             : adjust-color($orange-thin, $saturation: 35%);
-// $orange-thin             : rgba($orange-thin, 0.3);
-$blue               : #13999d;
+$blue               : #13769D;
+$green              : #A9CA98;
 $gray-light         : #878785;
 $gray-med           : #3d3d3d;
 $gray-dark          : #2d2d2d;
@@ -102,26 +58,18 @@ $orange-thin: rgba($orange-thin, 0.3);
 // Color Scheme Colors
 $primary-tints           : tint-stack($orange);
 $primary-shades          : shade-stack($orange);
-$secondary-tints         : tint-stack($blue-slate);
-$secondary-shades        : shade-stack($blue-slate);
-$tertiary-tints          : tint-stack($blue);
-$tertiary-shades         : shade-stack($blue);
-$quaternary-tints        : tint-stack(cs-tertiary());
-$quaternary-shades       : shade-stack(cs-tertiary());
+$secondary-tints         : tint-stack($blue);
+$secondary-shades        : shade-stack($blue);
+$tertiary-tints          : tint-stack($blue-slate);
+$tertiary-shades         : shade-stack($blue-slate);
+$quaternary-tints        : tint-stack($green);
+$quaternary-shades       : shade-stack($green);
+$black-tints             : tint-stack($black);
+$white-shades            : shade-stack($white);
 //////////////////////////////
 
 
 // link colors
-// $cs-link-normal: nth($quaternary-tints, 1);
-// $cs-link-hover: nth($primary-tints, 1);
-// $cs-link-active: nth($primary-tints, 1);
-// $cs-link-visited: nth($quaternary-tints, 1);
-// $cs-link-focus: nth($primary-tints, 1);
-// $cs-link-border-normal: nth($quaternary-tints, 1);
-// $cs-link-border-hover: nth($primary-tints, 1);
-// $cs-link-border-active: nth($primary-tints, 1);
-// $cs-link-border-visited: nth($quaternary-tints, 1);
-// $cs-link-border-focus: nth($primary-tints, 1);
 $cs-link-normal: $blue;
 $cs-link-hover: $orange;
 $cs-link-active: $orange;

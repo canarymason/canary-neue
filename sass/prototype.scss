@@ -29,7 +29,7 @@ $sp-vertical-horizontal-nav: 721px;
 // Color Guide
 @import ".prototype/color-guide";
 // This mixin will generate the styling for the color guide. If you would like to write your own, remove it and please do so.
-@include generate-colour-guide($black-tints, $primary-tints, $primary-shades, $secondary-tints, $secondary-shades, $tertiary-tints, $tertiary-shades, $quaternary-tints, $quaternary-shades);
+@include generate-colour-guide($primary-tints, $primary-shades, $secondary-tints, $secondary-shades, $tertiary-tints, $tertiary-shades, $quaternary-tints, $quaternary-shades, $black-tints, $white-shades );
 //////////////////////////////
 
 //////////////////////////////
