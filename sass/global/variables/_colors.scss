@@ -1,8 +1,32 @@
 // COLORS
-$black                   : #1f1f1f;
-$white                   : #fefefe;
-$gray                    : mix($black, $white);
-$cs-primary              : #f08c49;
+$black              : #1f1f1f;
+$white              : #fefefe;
+
+$orange             : #f08c49;
+$blue               : #13769D;
+$blue-slate         : #2B3542;
+$green              : #A9CA98;
+
+$orange-chocolate   : #311B03;
+$gray               : mix($black, $white);
+$gray-dark          : #2d2d2d;
+$gray-med           : #3d3d3d;
+$gray-light         : #878785;
+$gray-lighter       : #ECECEC;
+
+$cs-primary         : $orange;
+
+//////////////////////////////
+// derived colors
+$gray-extra-light   : adjust-color($gray-light, $lightness: 30%);
+$cool-white         : tint($blue, 95%);
+$orange-dark        : adjust-color($orange, $lightness: -10%);
+$orange-darker      : adjust-color($orange, $lightness: -15%);
+$orange-light       : tint($orange, 55%);;
+$blue-dark          : adjust-color($blue, $lightness: -10%);
+$gray-trans         : rgba($gray-light, 0.3);
+$blue-slate-mult    : blend-multiply(rgba($blue-slate, 0.2), $blue-slate);
+//////////////////////////////
 
 //////////////////////////////
 // Color Stacks
@@ -20,39 +44,6 @@ $cs-brightness-offset:  10;
 $cs-color-model:        ryb;
 // Options: rgb, ryb
 
-
-
-//////////////////////////////
-// Brand Colors
-$orange                  : $cs-primary;
-$blue               : #13769D;
-$green              : #A9CA98;
-$gray-light         : #878785;
-$gray-med           : #3d3d3d;
-$gray-dark          : #2d2d2d;
-$gray-med-light     : adjust-color($gray-light, $lightness: 20%);
-$gray-extra-light   : adjust-color($gray-light, $lightness: 30%);
-$gray-darker        : adjust-color($gray-dark, $lightness: -10%);
-$gray-lighter       : #ECECEC;
-$warm-white         : tint($orange, 90%);
-$cool-white         : tint($blue, 95%);
-$white-trans        : rgba($white, 0.2);
-$orange-dark        : adjust-color($orange, $lightness: -10%);
-$orange-darker      : adjust-color($orange, $lightness: -15%);
-$orange-chocolate   : #311B03; //#201203;
-$orange-chocolate-light: adjust-color($orange-chocolate, $lightness: 30%);
-$orange-chocolate-dark: adjust-color($orange-chocolate, $lightness: -5%);
-$orange-light       : tint($orange, 55%);;
-$blue-dark          : adjust-color($blue, $lightness: -10%);
-$gray-trans         : rgba($gray-light, 0.3);
-$blue-light         : adjust-color($blue, $lightness: 55%, $saturation: -40%);
-$blue-slate         : #2B3542;
-$blue-slate-mult    : blend-multiply(rgba($blue-slate, 0.2), $blue-slate);
-$blue-dim           : adjust-color($blue, $saturation: -5%);
-$orange-thin: shade($orange, 20%);
-$orange-thin: adjust-color($orange-thin, $saturation: 35%);
-$orange-thin: rgba($orange-thin, 0.3);
-//////////////////////////////
 
 //////////////////////////////
 // Color Scheme Colors
@@ -102,9 +93,9 @@ $cs-border: $gray;
 //////////////////////////////
 // Status Colors
 //////////////////////////////
-$cs-status-status: nth($secondary-tints, 6);
-$cs-status-warning: nth($primary-shades, 3);
-$cs-status-error: nth($primary-shades, 1);
+$cs-status-status  : nth($quaternary-tints, 4);
+$cs-status-warning : nth($secondary-tints, 6);
+$cs-status-error   : nth($primary-tints, 5);
 
 //////////////////////////////
 // Component defaults

@@ -48,16 +48,15 @@
   }
   li {
     display: inline-block;
-    height: 100px;
-    width: 100px;
-    @include breakpoint($sp-single-to-multi-column) {
-      height: 75px;
-      width: 75px;
-    }
-    @include breakpoint(1034px) {
-      height: 50px;
-      width: 50px;
-    }
+
+    // @include breakpoint($sp-single-to-multi-column) {
+    //   height: 75px;
+    //   width: 75px;
+    // }
+    // @include breakpoint(1034px) {
+    //   height: 50px;
+    //   width: 50px;
+    // }
     margin: {
       left: .25em;
       bottom: .25em;
@@ -67,6 +66,8 @@
 
 .colors li {
   border-radius: 50%;
+  height: 100px;
+  width: 100px;
 }
 
 .images li {

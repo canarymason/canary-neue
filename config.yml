@@ -50,10 +50,10 @@ styleTile:
     - feathers/stock-photo-close-up-of-blue-macaw-feathers-138263024.jpg
   # Descriptive keywords for Style Tile
   keywords:
-    - Default
     - Minimal
-    - Nothing
-    - Design me!
+    - simple
+    - sophisticated
+    - color blocks
 
 #########################
 ## Component Guide
@@ -67,9 +67,6 @@ components:
     - hero
   title:
     - section
-  teaser:
-    - blog
-    - testimonial
   headline:
     - press
   message:
