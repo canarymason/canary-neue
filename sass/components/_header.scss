@@ -32,19 +32,22 @@ $output-selectors--header: true !default;
   padding: 0 0.5em;
   padding-bottom: 0.5em;
   border-bottom: 1px solid rgba($blue, 0.1);
-  background-color: $blue-slate;
+  background-color: $white;
   background: {
     size: cover;
     repeat: no-repeat;
-    image: image-url('feathers/tar_by_baspunk-d5duokj.jpg');
-    position: 50% 32%;
-    image: image-url('feathers/stock-photo-close-up-of-blue-macaw-feathers-138263024-blue.jpg');
-    position: 50% 23%;
-    image: image-url('feathers/Feathers_Texture_by_armene_stock-blue.jpg');
-    position: 50% 64%;
+    image: image-url('feathers/Feather_II_by_Mifti_Stock-1-light.jpg');
+    position: 50% 50%;
   }
   @include breakpoint($bp-big-logo) {
     padding-bottom: 0;
+  }
+}
+.site-header-wrapper {
+  @include breakpoint($bp-big-logo) {
+    @include background-image(radial-gradient(100% 100%, rgba($white, .5) 18%, rgba($white, 0) 50%));
+    max-width: 20em;
+    margin: 0 auto;
   }
 }
 
@@ -75,7 +78,7 @@ $output-selectors--header: true !default;
       position: absolute;
       top: 50%;
       display: block;
-      border-bottom: 1px solid $white;
+      border-bottom: 1px solid $blue-slate;
       content: $space;
     }
     &:before {
@@ -112,7 +115,7 @@ $output-selectors--header: true !default;
   clear: left;
   margin-bottom: 0;
   max-width: em(260px, 14px);
-  color: $gray-extra-light;
+  color: $blue-slate;
   @include breakpoint($bp-big-logo) {
     margin: 0 auto;
     padding-bottom: 0.5em;
