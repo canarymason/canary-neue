@@ -40,13 +40,14 @@ $output-selectors--header: true !default;
     position: 50% 50%;
   }
   @include breakpoint($bp-big-logo) {
-    padding-bottom: 0;
+    padding-bottom: 2em;
+    padding-top: 2em;
   }
 }
 .site-header-wrapper {
   @include breakpoint($bp-big-logo) {
-    @include background-image(radial-gradient(100% 100%, rgba($white, .5) 18%, rgba($white, 0) 50%));
-    max-width: 20em;
+    background-color: $white;
+    max-width: 32em;
     margin: 0 auto;
   }
 }
@@ -69,10 +70,10 @@ $output-selectors--header: true !default;
     @include transform3d( translateY(-35px) translateX(261px) rotateZ(-8deg) );
   }
   @include breakpoint($bp-big-logo) {
-    @include transform3d( translateY(18px) );
+    @include transform3d( translateY(-26px) );
     position: relative;
     display: block;
-    margin: 0 auto -22px;
+    margin: 0 auto -66px;
     opacity: 1;
     &:before, &:after {
       position: absolute;
@@ -125,7 +126,7 @@ $output-selectors--header: true !default;
     line-height: $base-line-height;
   }
   @include breakpoint($bp-nav-big-logo) {
-    padding-bottom: 2.5em;
+    // padding-bottom: 2.5em;
   }
   .amp {
     @extend %amp;
