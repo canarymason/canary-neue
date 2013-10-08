@@ -23,7 +23,7 @@ $link-extendables-extended: false !default;
   }
 
   %nav-links {
-    @include set-link-colors($gray-extra-light, $white, $white, $gray-extra-light, $gray-extra-light, $extend: false);
+    @include set-link-colors($blue-slate, $orange, $orange, $blue-slate, $blue-slate, $extend: false);
   }
 
   %links-white {

@@ -110,7 +110,7 @@ $output-selectors--nav: true !default;
   }
   margin-bottom: -0.5em;
   padding: 0.5em 0 1.5em;
-  background-color: $blue-slate-mult;
+  background-color: $white;
   ul {
     @include display-box;
     @include box-orient(horizontal);
