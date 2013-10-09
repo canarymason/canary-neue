@@ -108,7 +108,7 @@ $output-selectors--nav: true !default;
   .jPanelMenu-panel & {
     @extend %a11y-hidden-focusable-extend;
   }
-  margin-bottom: -0.5em;
+  // margin-bottom: -0.5em;
   padding: 0.5em 0 1.5em;
   background-color: $white;
   ul {
