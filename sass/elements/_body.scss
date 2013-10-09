@@ -29,6 +29,7 @@ $output-elements--body: true !default;
 // Baseline Body Styling
 body {
   @extend %body-base;
+  border: 0.5em solid $orange;
 }
 // {body}@
 //////////////////////////////
