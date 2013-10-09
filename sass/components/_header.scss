@@ -49,6 +49,8 @@ $output-selectors--header: true !default;
     background-color: $white;
     max-width: 32em;
     margin: 0 auto;
+    @include background-image(linear-gradient(left, rgba($blue, 0.2) 1.5em, rgba($blue, 0.1) 1.5em, rgba($blue, 0.1) 2.5em, $white 2.5em));
+    // @include box-shadow(rgba($black, 0.1) -10px 0 10px, rgba($black, 0.1) 10px 0 10px);
   }
 }
 
