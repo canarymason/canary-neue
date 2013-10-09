@@ -1,1 +1,1 @@
-$(function(){});
+$(function(){function a(a,b){return Math.random()*(b-a)+a}$(".site-header").css("background-position","50%"+a(0,100)+"%")});
