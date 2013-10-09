@@ -30,6 +30,9 @@ $output-elements--body: true !default;
 body {
   @extend %body-base;
   border: 0.5em solid $orange;
+  &[data-menu-position='open'] {
+    border-left: none;
+  }
 }
 // {body}@
 //////////////////////////////

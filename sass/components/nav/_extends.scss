@@ -31,7 +31,7 @@ $nav-extendables-extended: false !default;
     background-color: rgba($orange,  0.9);
     @include breakpoint(500px) {
       background-color: rgba($white,  0.9);
-      border-left: 1em solid rgba($orange,  0.9);
+      border-left: 0.5em solid rgba($orange,  0.9);
     }
   }
 }
