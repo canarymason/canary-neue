@@ -22,6 +22,10 @@
 // Style Tile
 //////////////////////////////
 
+.component {
+  margin-bottom: 1.5em;
+}
+
 .text-examples {
   width: 100%;
   @include clearfix(true);
