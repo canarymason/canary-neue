@@ -1,0 +1,18 @@
+<div class="prototype-group--file-download">
+
+  {{#if page.examples}}
+    {{{create-example-sass "file-download" all true}}}
+  {{/if}}
+  <ul component-list>
+    {{#each options.grunt.userConfig.components.file-download}}
+      <li>
+        {{{component "file-download" this}}}
+
+        {{#if ../page.examples}}
+          {{{create-example-html "file-download" ../this}}}
+          {{{create-example-sass "file-download" ../this}}}
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>

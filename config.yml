@@ -146,7 +146,7 @@ colors:
 server:
   port: 8800
   # If remoteAccess is set to true, you will be able to access your prototype from any device connected to the same network as well as be able to remotely debug them.
-  remoteAccess: false
+  remoteAccess: true
 
 #########################
 ## Export Options

@@ -1,0 +1,73 @@
+//////////////////////////////
+// File-download Component
+//
+// The partial and folder structure for this component should be as follows:
+// _file-download.scss
+// file-download (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "file-download/mixins";
+@import "file-download/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--file-download set to `true` will output the CSS selectors for File-downloadComponent
+$output-selectors--file-download: true !default;
+@if $output-selectors and $output-selectors--file-download {
+//////////////////////////////
+
+//////////////////////////////
+// @{file-download}
+// Styling for File-download Component
+.file-downloads--client {
+  $file-downloads--client--grid: 2;
+  $file-downloads--client--gutter: 1/12;
+  $file-downloads--client--break-2: 320px;
+  @include clearfix;
+  @include breakpoint($file-downloads--client--break-2) {
+    @include layout($file-downloads--client--grid, $file-downloads--client--gutter) {
+      .file-download--image {
+        &:nth-of-type(odd) {
+          @include grid-span(1, 1, $options: 'both');
+        }
+        &:nth-of-type(even) {
+          @include grid-span(1, 2);
+        }
+      }
+    }
+  }
+}
+// {file-download}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{file-download--image}
+// Image styling for File-download Component
+.file-download--image {
+  display: table;
+  margin-bottom: 1em;
+  a {
+    display: table-cell;
+    max-width: 75px;
+    max-height: 75px;
+    vertical-align: top;
+  }
+  figcaption {
+    display: table-cell;
+    padding-left: 1em;
+    vertical-align: bottom;
+  }
+}
+// {file-download--image}@
+//////////////////////////////
+
+}

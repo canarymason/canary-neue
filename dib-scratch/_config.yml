@@ -1,0 +1,6 @@
+#######################
+## Component Guide
+#########################
+components:
+  file-download:
+    - image
