@@ -34,9 +34,6 @@ $page-title-extend: true !default;
   @else {
     @include link-colors($white, $white, $white, $white, $white);
     @include unset-border-links();
-    &:hover {
-      text-shadow: $blue 2px 2px 0;
-    }
   }
 }
 
@@ -46,7 +43,7 @@ $page-title-extend: true !default;
   }
   @else {
     margin-bottom: 0.25em;
-    color: $blue;
+    // color: $blue;
     font-size: em(ms(2), $base-font-size);
     line-height: em(32px, ms(2));
   }

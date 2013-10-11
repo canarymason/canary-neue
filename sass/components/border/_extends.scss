@@ -10,11 +10,11 @@ $border-extendables-extended: false !default;
   }
 
   %border-bottom-dashed {
-    @include border($sides: bottom, $style: dashed, $color: rgba($gray-light, 0.5), $extend: false);
+    // @include border($sides: bottom, $style: dashed, $color: rgba($gray-light, 0.5), $extend: false);
   }
 
   %border-right-blue {
-    @include border($sides: right, $color: shade($blue-slate, 20%), $extend: false);
+    // @include border($sides: right, $color: shade($blue-slate, 20%), $extend: false);
   }
 }
 

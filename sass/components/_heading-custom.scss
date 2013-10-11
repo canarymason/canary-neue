@@ -27,16 +27,9 @@ $output-selectors--heading-custom: true !default;
 //////////////////////////////
 // @{heading-custom}
 // Styling for Heading-custom Component
-h1[class*="title"] {
-  @extend %orange-block;
-  a {
-    @extend %orange-block-link;
-  }
-}
+h1[class*="title"] {}
 
-.page-title {
-  @extend %page-title;
-}
+.page-title {}
 // {heading-custom}@
 //////////////////////////////
 

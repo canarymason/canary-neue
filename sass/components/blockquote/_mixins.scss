@@ -27,15 +27,6 @@ $blockquote-footer-extend: true !default;
   @else {
     position: relative;
     margin: 0 0 26px 1.5em;
-    &:before {
-      @extend %slab-medium;
-      position: absolute;
-      left: -0.5em;
-      color: $orange-dark;
-      content: "“";
-      font-size: 3em;
-      line-height: 1;
-    }
   }
 }
 
@@ -44,12 +35,6 @@ $blockquote-footer-extend: true !default;
     @extend %blockquote-footer-extend;
   }
   @else {
-    color: $orange-darker;
     text-align: right;
-    &:before {
-      margin-right: 0.25em;
-      color: $blue;
-      content: "~";
-    }
   }
 }

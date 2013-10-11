@@ -9,17 +9,9 @@ $icon-extendables-extended: false !default;
     @include icon-inline-list(false);
   }
 
-  %icon-button {
-    float: right;
-    min-width: 44px;
-    text-align: center;
-    line-height: 44px;
-    @extend %icon-button-orange;
-  }
+  %icon-button {}
 
-  %icon-button-orange {
-    @include set-link-colors($orange-light, $white, $white, $orange-light, $orange-light, $extend: false);
-  }
+  %icon-button-orange {}
 
 }
 

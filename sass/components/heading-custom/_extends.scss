@@ -18,7 +18,7 @@ $heading-custom-extendables-extended: false !default;
   }
   %article-heading-blue {
     @include article-heading(false);
-    color: $blue;
+    // color: $blue;
   }
 
   %heading-to-label {
