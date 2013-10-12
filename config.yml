@@ -23,7 +23,7 @@ prototype:
   # If you would like to include webfonts, the following two provides have native support
   webfonts:
     # Typekit Kit ID (uses advanced loading method)
-    typekit: false
+    typekit: byy2mku
     # Copy in the the families from inside the brackets [] from the JavaScript tab. Be sure to wrap it in "double quotes".
     googleFonts: false
 
