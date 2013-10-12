@@ -35,6 +35,7 @@ sections:
   Components: components
   Colors: colors
   Home: canary
+  Client: canary/client.html
 
 ## Style Tile Options
 styleTile:
