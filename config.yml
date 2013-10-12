@@ -44,18 +44,16 @@ styleTile:
   # Source links to inspirational images
   # Either relative paths from your images directory, or absolute paths to external images
   images:
-    - feathers/stock-photo-18775464-white-wing.jpg
-    - feathers/tar_by_baspunk-d5duokj.jpg
-    - feathers/4592706493_8d7119dd95_o.jpg
-    - feathers/Feathers_Texture_by_armene_stock.jpg
-    - feathers/stock-photo-close-up-of-blue-macaw-feathers-138263024.jpg
+    - patterns/capsule.jpg
+    - patterns/clouds.jpg
+    - patterns/iceberg.jpg
+    - patterns/ice.jpg
+    - patterns/moon.jpg
+    - patterns/rocket.jpg
   # Descriptive keywords for Style Tile
   keywords:
-    - Minimal
-    - simple
-    - sophisticated
-    - color blocks
-    - light
+    - crazy
+    - pants
 
 #########################
 ## Component Guide
