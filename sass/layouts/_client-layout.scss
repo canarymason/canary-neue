@@ -1,0 +1,49 @@
+.file-downloads--client {
+  $file-downloads--client--grid: 2;
+  $file-downloads--client--gutter: 1/12;
+  $file-downloads--client--break-2: 320px;
+  @include clearfix;
+  @include breakpoint($file-downloads--client--break-2) {
+    @include layout($file-downloads--client--grid, $file-downloads--client--gutter) {
+      .file-download--image {
+        &:nth-of-type(odd) {
+          @include grid-span(1, 1, $options: 'both');
+        }
+        &:nth-of-type(even) {
+          @include grid-span(1, 2);
+        }
+      }
+    }
+  }
+}
+
+.client-page {
+  $client-page--grid-large: golden() 1;
+  $client-page--grid-small: 1 golden();
+  $client-page--gutter: 1/12;
+  $client-page--break-2: 320px;
+  @include clearfix;
+  @include breakpoint($client-page--break-2) {
+    @include layout($client-page--grid-small, $client-page--gutter) {
+      > header {
+          @include grid-span(1, 1);
+      }
+      > .hero {
+          @include grid-span(1, 2);
+      }
+    }
+    > .testimonial {
+      clear: both;
+      margin: 0 auto;
+      max-width: 66%;
+    }
+    @include layout($client-page--grid-large, $client-page--gutter) {
+      > .our-work {
+          @include grid-span(1, 1, $options: 'both');
+      }
+      > .for-the-media {
+          @include grid-span(1, 2);
+      }
+    }
+  }
+}
